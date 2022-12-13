@@ -84,8 +84,10 @@ set signcolumn=yes
 " fugitive always vertical diffing
 set diffopt+=vertical
 
-
-
+" prettier 
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
 
 let $FZF_DEFAULT_OPTS='--layout=reverse'
 "let g:fzf_layout = { 'window': 'call FloatingFZF()' }

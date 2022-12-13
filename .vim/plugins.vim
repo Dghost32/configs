@@ -22,7 +22,7 @@ Plug 'shinchu/lightline-gruvbox.vim'
 
 " icons
 " Plug 'ryanoasis/vim-devicons'
-
+ 
 " Tree
 Plug 'scrooloose/nerdtree'
 
@@ -55,6 +55,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
@@ -63,11 +64,19 @@ Plug 'elzr/vim-json'
 Plug 'kien/ctrlp.vim'
 Plug 'andrewradev/tagalong.vim'
 
+" format
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
 " git
 Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-repeat'
 
+" copilot
 Plug 'github/copilot.vim'
+
+" live server
+Plug 'manzeloth/live-server'
 
 call plug#end()

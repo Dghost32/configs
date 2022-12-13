@@ -26,6 +26,9 @@ map <Leader>nt :NERDTreeFocus<CR>
 map <Leader>p :Files<CR>
 map <Leader>ag :Ag<CR>
 
+" Prettier
+nmap <Leader>py <Plug>(PrettierAsync)
+
 " tmux navigator
 nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
