@@ -18,6 +18,7 @@ Plug 'itchyny/lightline.vim'
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " icons
@@ -44,15 +45,16 @@ Plug 'neoclide/coc-snippets'
 Plug 'neoclide/coc-tsserver'
 Plug 'neoclide/coc-json'
 Plug 'mattn/emmet-vim'
-Plug 'ervandew/supertab'
+"Plug 'valloric/youcompleteme'
 
 " test
 Plug 'tyewang/vimux-jest-test'
 Plug 'janko-m/vim-test'
 
 " IDE
+Plug 'ervandew/supertab'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mg979/vim-visual-multi'
@@ -63,15 +65,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
 Plug 'kien/ctrlp.vim'
 Plug 'andrewradev/tagalong.vim'
+Plug 'tpope/vim-repeat'
 
 " format
-" post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 " git
 Plug 'tpope/vim-fugitive'
-
-Plug 'tpope/vim-repeat'
+Plug 'APZelos/blamer.nvim'
 
 " copilot
 Plug 'github/copilot.vim'

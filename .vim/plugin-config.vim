@@ -52,12 +52,28 @@ let g:tmux_navigator_no_mappings = 1
 " coc
 autocmd FileType scss setl iskeyword+=@-@
 
+" git blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 100
+let g:blamer_prefix = ' > '
+
 " vim fugitive
 command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+
+" Default options are --nogroup --column --color
+let s:ag_options = ' --one-device --skip-vcs-ignores --smart-case '
+
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
+  \ call fzf#vim#ag(
+  \   <q-args>,
+  \   s:ag_options,
+  \  <bang>0 ? fzf#vim#with_preview('up:60%')
+  \        : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0
+  \ )
+
 
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
