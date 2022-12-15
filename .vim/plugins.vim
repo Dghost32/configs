@@ -19,6 +19,7 @@ Plug 'itchyny/lightline.vim'
 " Themes
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " icons
@@ -30,11 +31,11 @@ Plug 'scrooloose/nerdtree'
 " typing
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
+Plug 'vim-autoformat/vim-autoformat'
 
 " tmux
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-autoformat/vim-autoformat'
 
 " autocomplete
 Plug 'sirver/ultisnips'
@@ -59,7 +60,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mg979/vim-visual-multi'
 Plug 'easymotion/vim-easymotion'
-Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
@@ -73,6 +73,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'APZelos/blamer.nvim'
+Plug 'mhinz/vim-signify'
 
 " copilot
 Plug 'github/copilot.vim'

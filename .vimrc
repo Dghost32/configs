@@ -14,15 +14,18 @@ set relativenumber
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
 so ~/.vim/maps.vim
- 
+
+"colorscheme molokai
+"let g:molokai_original = 1
+
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
-highlight Normal ctermbg=NONE
-"syntax enable
+
 "set background=dark
-"colorscheme solarized
 set laststatus=2
 set noshowmode
+highlight Normal ctermbg=NONE
+
 
 lua require'colorizer'.setup()
 
@@ -31,3 +34,8 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+"" Folding
+set foldmethod=syntax
+set foldclose=all
+set foldlevel=99

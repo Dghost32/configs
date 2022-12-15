@@ -127,6 +127,10 @@ function openNvim {
   fi
 }
 
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # export PATH="$HOME/.fastlane/bin:$PATH"
