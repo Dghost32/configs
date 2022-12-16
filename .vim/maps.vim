@@ -25,6 +25,13 @@ cnoreabbrev diff Gdiff
 map <Leader>nt :NERDTreeFocus<CR>
 map <Leader>p :Files<CR>
 map <Leader>ag :Ag<CR>
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files prompt_prefix=🔍<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>hh <cmd>Telescope keymaps<cr>
+nnoremap <leader>ss <cmd>Telescope spell_suggest<cr>
 
 " Prettier
 nmap <Leader>py <Plug>(PrettierAsync)
@@ -75,6 +82,9 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nnoremap <Leader>G :G<cr>
 nnoremap <Leader>gl :Gpull<cr>
 nnoremap <Leader>gp :Gpush<cr>
+nnoremap <Leader>gs :Telescope git_status<cr>
+nnoremap <Leader>gc :Telescope git_commits<cr>
+nnoremap <Leader>gb :Telescope git_branches<cr>
 
 " run current file
 nnoremap <Leader>x :!node %<cr>

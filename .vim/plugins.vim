@@ -23,10 +23,15 @@ Plug 'tomasr/molokai'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " icons
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
  
 " Tree
 Plug 'scrooloose/nerdtree'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+"
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " typing
 Plug 'alvan/vim-closetag'

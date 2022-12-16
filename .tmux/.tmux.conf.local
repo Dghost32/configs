@@ -60,7 +60,7 @@ tmux_conf_theme_colour_13="#e4e4e4"   # white - right side pane font
 tmux_conf_theme_colour_14="#e4e4e4"   # white - right side pc name 
 tmux_conf_theme_colour_15="#323232"   # gray - rigth side arr, date & time bg
 tmux_conf_theme_colour_16="#674ea7"   # purple - right side panel bg
-tmux_conf_theme_colour_17="#006400"   # gray
+tmux_conf_theme_colour_17="#3d85c6"   # gray - pc name bg
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"

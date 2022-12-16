@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v=openNvim
+alias c=openCode
+alias vc="cd ~/configs && v"
+alias lv=openLvim
 alias guc="git reset --soft HEAD~"
 alias e="exit"
 # NVM configuration
@@ -118,6 +121,23 @@ if [ -f ~/.myenvs ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function openCode {
+  if [ $# -eq 0 ]; then
+    code ./
+  else
+    code $1
+  fi
+}
+
+
+function openLvim {
+  if [ $# -eq 0 ]; then
+    lvim ./
+  else
+    lvim $1
+  fi
+}
 
 function openNvim {
   if [ $# -eq 0 ]; then
