@@ -1,0 +1,413 @@
+{
+  "workbench.iconTheme": "gruvbox-material-icon-theme",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "terminal.integrated.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Jetbrains Mono'",
+  "editor.fontSize": 18,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "kite.showWelcomeNotificationOnStartup": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "explorer.confirmDelete": false,
+  "editor.largeFileOptimizations": false,
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "jupyter.alwaysTrustNotebooks": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+  "julia.symbolCacheDownload": true,
+  "php.suggest.basic": false,
+  "php.validate.enable": false,
+  "emmet.excludeLanguages": ["markdown", "php"],
+  "editor.linkedEditing": true,
+  "git.ignoreRebaseWarning": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/dist/css"
+    }
+  ],
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "cmake.configureOnOpen": true,
+  "pythonIndent.keepHangingBracketOnLine": true,
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  "python.formatting.autopep8Args": ["--ignore=E731", "--indent-size=2"],
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "editor.inlineSuggest.enabled": true,
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
+  "files.associations": {
+    ".html": "html"
+  },
+  "emmet.includeLanguages": {
+    "python.jediEnabled": false,
+    "files.autoSave": "afterDelay",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.minimap.enabled": true,
+    "workbench.colorTheme": "Monokai",
+    "editor.largeFileOptimizations": false,
+    "html.format.indentInnerHtml": true,
+    "html.format.indentHandlebars": true,
+    "emmet.includeLanguages": {
+      "django-html": "html"
+    },
+    "[django-html]": {},
+    "files.associations": {
+      "*.html": "html"
+    }
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "editor.lineNumbers": "relative",
+
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.visualModeKeyBindings": [
+    {
+      // comment line
+      "before": ["<leader>", "c", "<leader>"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      // block comment
+      "before": ["<leader>", "m", "c"],
+      "commands": ["editor.action.blockComment"]
+    },
+    {
+      // back to normal mode
+      "before": ["n", "n"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      // back to normal mode
+      "before": ["n", "n"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      // delete line
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      // yank line
+      "before": ["<leader>", "y"],
+      "after": ["y", "y"]
+    },
+    {
+      // save
+      "before": ["<leader>", "w"],
+      "after": ["<C-s>"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      // quit
+      "before": ["<leader>", "q"],
+      "after": ["<C-w>"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      // force quit
+      "before": ["<leader>", "Q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["n", "n"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
+    },
+    {
+      // linebreak up
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      // quick move up
+      "before": ["<C-j>"],
+      "after": ["5", "<C-e>"]
+    },
+    {
+      //open fzf
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      //open nerdtree
+      "before": ["<leader>", "n", "t"],
+      "after": ["<C-e>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      // comment line
+      "before": ["<leader>", "c", "<leader>"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      // block comment
+      "before": ["<leader>", "m", "c"],
+      "commands": ["editor.action.blockComment"]
+    },
+    {
+      // split editor left
+      "before": ["<leader>", "s", "p"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      // focus editor left
+      "before": ["<leader>", "<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      // focus editor right
+      "before": ["<leader>", "<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      // toggle terminal
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    {
+      //execute current file in terminal (js)
+      "before": ["<leader>", "x"],
+      "commands": [
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "node ${file}\n"
+          }
+        }
+      ]
+    },
+    {
+      //git status
+      "before": ["<leader>", "g", "s"],
+      "commands": [
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git status\n"
+          }
+        }
+      ]
+    },
+    {
+      // git add .
+      "before": ["<leader>", "g", "a"],
+      "commands": [
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git add .\n"
+          }
+        }
+      ]
+    },
+    {
+      // git commit
+      "before": ["<leader>", "g", "c"],
+      "commands": [
+        "workbench.action.terminal.clear",
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git commit -m \""
+          }
+        }
+      ]
+    },
+    {
+      // git push
+      "before": ["<leader>", "g", "p"],
+      "commands": [
+        "workbench.action.terminal.clear",
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git push\n"
+          }
+        }
+      ]
+    },
+    {
+      // git pull
+      "before": ["<leader>", "g", "l"],
+      "commands": [
+        "workbench.action.terminal.clear",
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git pull\n"
+          }
+        }
+      ]
+    },
+    {
+      // git checkout
+      "before": ["<leader>", "g", "o"],
+      "commands": [
+        "workbench.action.terminal.clear",
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git checkout\n"
+          }
+        }
+      ]
+    },
+    {
+      // git checkout
+      "before": ["<leader>", "g", "b"],
+      "commands": [
+        "workbench.action.terminal.clear",
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git branch\n"
+          }
+        }
+      ]
+    },
+    {
+      // git checkout
+      "before": ["<leader>", "g", "m"],
+      "commands": [
+        "workbench.action.terminal.clear",
+        {
+          // clear
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\nclear\n"
+          }
+        },
+        "workbench.action.terminal.toggleTerminal",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "git merge\n"
+          }
+        }
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "workbench.panel.defaultLocation": "right",
+  "terminal.integrated.defaultProfile.linux": "tmux"
+}
