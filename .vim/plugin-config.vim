@@ -55,7 +55,7 @@ autocmd FileType scss setl iskeyword+=@-@
 " git blamer
 let g:blamer_enabled = 1
 let g:blamer_delay = 100
-let g:blamer_prefix = ' > '
+let g:blamer_prefix = ' -> '
 
 " vim fugitive
 command! -bang -nargs=? -complete=dir GFiles

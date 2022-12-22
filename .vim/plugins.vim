@@ -27,7 +27,7 @@ Plug 'ryanoasis/vim-devicons'
  
 " Tree
 Plug 'scrooloose/nerdtree'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 "
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
