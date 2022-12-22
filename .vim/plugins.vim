@@ -53,6 +53,9 @@ Plug 'neoclide/coc-json'
 Plug 'mattn/emmet-vim'
 "Plug 'valloric/youcompleteme'
 
+" Autoimport
+Plug 'kristijanhusak/vim-js-file-import'
+
 " test
 Plug 'tyewang/vimux-jest-test'
 Plug 'janko-m/vim-test'
