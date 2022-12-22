@@ -89,4 +89,8 @@ Plug 'github/copilot.vim'
 " live server
 Plug 'manzeloth/live-server'
 
+"" PHP
+Plug 'stanangeloff/php.vim'
+Plug 'rayburgemeestre/phpfolding.vim'
+
 call plug#end()
