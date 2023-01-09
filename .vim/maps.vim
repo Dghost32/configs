@@ -87,7 +87,7 @@ nnoremap <Leader>gc :Telescope git_commits<cr>
 nnoremap <Leader>gb :Telescope git_branches<cr>
 
 " run current file
-nnoremap <Leader>x :!node %<cr>
+nnoremap <Leader>x :call Run()<cr>
 
 " Use <c-space> to trigger completion.
 "if &filetype == "javascript" || &filetype == "python"
@@ -255,4 +255,43 @@ function CheckNextParens(c)
     return "\<right>"
   endif
   return a:c
+endfunction
+
+"" function to run code
+function Run()
+  let bufType = &filetype
+  if bufType == "python"
+    execute "!python3 %"
+  elseif bufType == "javascript"
+    execute "!node %"
+  elseif bufType == "typescript"
+    execute "!ts-node %"
+  elseif bufType == "go"
+    execute "!go run %"
+  elseif bufType == "rust"
+    execute "!cargo run"
+  elseif bufType == "c"
+    execute "!gcc % -o %<"
+    execute "!./%<"
+  elseif bufType == "cpp"
+    execute "!g++ % -o %<"
+    execute "!./%<"
+  elseif bufType == "java"
+    execute "!javac %"
+    execute "!java %<"
+  elseif bufType == "php"
+    execute "!php %"
+  elseif bufType == "ruby"
+    execute "!ruby %"
+  elseif bufType == "html"
+    execute "!firefox %"
+  elseif bufType == "lua"
+    execute "!lua %"
+  elseif bufType == "elixir"
+    execute "!elixir %"
+  elseif bufType == "erlang"
+    execute "!erl %"
+  elseif bufType == "haskell"
+    execute "!runh
+  endif
 endfunction
