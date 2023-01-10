@@ -43,13 +43,10 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 " kite
 "let g:kite_supported_languages = ['*']
-let g:coc_global_extensions = [
-      \ 'coc-tsserver'
-      \ ]
+
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
 
-" coc
 autocmd FileType scss setl iskeyword+=@-@
 
 " git blamer
@@ -106,51 +103,20 @@ let g:prettier#autoformat_require_pragma = 0
 let g:prettier#exec_cmd_async = 1
 
 let $FZF_DEFAULT_OPTS='--layout=reverse'
-"let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-"function! FloatingFZF()
-  "let buf = nvim_create_buf(v:false, v:true)
-  "call setbufvar(buf, '&signcolumn', 'no')
-  "let height = float2nr((&lines - 3) / 2)
-  "let width = float2nr(&columns - (&columns * 2 / 10))
-  "let col = float2nr((&columns - width) / 2)
-  "let row = float2nr((&lines - height) / 2)
-  "let opts = {
-        "\ 'relative': 'editor',
-        "\ 'row': row,
-        "\ 'col': col,
-        "\ 'width': width,
-        "\ 'height': height
-        "\ }
-  "call nvim_open_win(buf, v:true, opts)
-"endfunction
 
-"function! SearchPatternInFile(pattern)
-    "" Save cursor position.
-    "let save_cursor = getcurpos()
-
-    "" Set cursor position to beginning of file.
-    "call cursor(0, 0)
-
-    "" Search for the string 'hello' with a flag c.  The c flag means that a
-    "" match at the cursor position will be accepted.
-    "let search_result = search(a:pattern, "c")
-
-    "" Set the cursor back at the saved position.  The setpos function was
-    "" used here because the return value of getcurpos can be used directly
-    "" with it, unlike the cursor function.
-    "call setpos('.', save_cursor)
-
-    "" If the search function didn't find the pattern, it will have
-    "" returned 0, thus it wasn't found.  Any other number means that an instance
-    "" has been found.
-    "return search_result
-"endfunction
-
+"""""""
+" COC "
+"""""""
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use CTRL-S for selections ranges
+" Requires 'textDocument/selectionRange' support of language server
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<C-j>'
@@ -164,15 +130,11 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
+" Add `:OR` command for organize imports of the current buffer
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-eslint',
+      \ 'coc-snippets',
+      \ ]

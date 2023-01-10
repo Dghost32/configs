@@ -28,7 +28,7 @@ Plug 'ryanoasis/vim-devicons'
 " Tree
 Plug 'scrooloose/nerdtree'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
-"
+
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -44,7 +44,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " autocomplete
 Plug 'sirver/ultisnips'
-Plug 'mlaursen/vim-react-snippets'
+Plug 'honza/vim-snippets'
+"Plug 'mlaursen/vim-react-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-eslint'
 Plug 'neoclide/coc-snippets'

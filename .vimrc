@@ -11,6 +11,7 @@ set showmatch
 set termguicolors
 set sw=2
 set relativenumber
+"so ~/.vim/vam.vim
 so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
 so ~/.vim/maps.vim
