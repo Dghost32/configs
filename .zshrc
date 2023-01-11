@@ -109,6 +109,7 @@ alias vc="cd ~/configs && v"
 alias lv=openLvim
 alias guc="git reset --soft HEAD~"
 alias e="exit"
+alias sr="sudo reboot"
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
