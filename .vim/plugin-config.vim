@@ -35,14 +35,17 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeMapOpenInTab='\t'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+""""""""""""""
+" ULTISNIPS "
+"""""""""""""
 let g:UltiSnipsSnippetDirectories=[$HOME.'/configs/.vim/UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<C-_>"
+let g:UltiSnipsListSnippets="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 " kite
-"let g:kite_supported_languages = ['*']
+let g:kite_supported_languages = ['*']
 
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
@@ -110,8 +113,8 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+" Use <C-h> for select text for visual placeholder of snippet.
+vmap <C-h> <Plug>(coc-snippets-select)
 
 " Use CTRL-S for selections ranges
 " Requires 'textDocument/selectionRange' support of language server
@@ -124,17 +127,25 @@ let g:coc_snippet_next = '<C-j>'
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<C-k>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+" Use <C-h> for both expand and jump (make expand higher priority.)
+imap <C-h> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+" Add `:Fold` command to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-eslint',
       \ 'coc-snippets',
       \ ]
+
+

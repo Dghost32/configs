@@ -10,7 +10,7 @@ nnoremap <Leader>> 10<C-w>>
 nnoremap <Leader>< 10<C-w><
 
 " quick semi
-nnoremap <Leader>; $a;<Esc>
+nnoremap <silent>, $a;<Esc>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -21,7 +21,25 @@ cnoreabbrev blame Gblame
 cnoreabbrev find NERDTreeFind
 cnoreabbrev diff Gdiff
 
-" plugs
+""""""""""""""""""""""""
+" popupmenu completion "
+""""""""""""""""""""""""
+" CONFIRM
+inoremap <silent><expr> <C-l> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" ESCAPE
+"inoremap <expr> <Esc> coc#pum#visible() ? "\<C-e>" : "\<Esc>"
+" GO DOWN
+inoremap <silent><expr> <C-j>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+" GO UP
+inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+
+
+" plugs 
 map <Leader>nt :NERDTreeFocus<CR>
 map <Leader>p :Files<CR>
 map <Leader>ag :Ag<CR>

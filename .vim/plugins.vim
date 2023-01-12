@@ -45,17 +45,21 @@ Plug 'christoomey/vim-tmux-navigator'
 " autocomplete
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'mlaursen/vim-react-snippets'
+
+" COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-eslint'
 Plug 'neoclide/coc-snippets'
 Plug 'neoclide/coc-tsserver'
 Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-tabnine'
 Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc-highlight'
 "Plug 'valloric/youcompleteme'
 
 " Autoimport
-"Plug 'kristijanhusak/vim-js-file-import'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 
 " test
 Plug 'tyewang/vimux-jest-test'
@@ -85,7 +89,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'mhinz/vim-signify'
 
 " copilot
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 
 " live server
 Plug 'manzeloth/live-server'
