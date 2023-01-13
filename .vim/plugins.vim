@@ -86,6 +86,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'APZelos/blamer.nvim'
+Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 
 " copilot
