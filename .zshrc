@@ -71,6 +71,9 @@ ZSH_THEME="nanotech"
 plugins=(
   git
   zsh-syntax-highlighting
+  zsh-interactive-cd
+  yarn
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,6 +113,7 @@ alias lv=openLvim
 alias guc="git reset --soft HEAD~"
 alias e="exit"
 alias sr="sudo reboot"
+
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
