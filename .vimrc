@@ -40,3 +40,8 @@ set smartcase                   " ... unless they contain at least one capital l
 set foldmethod=syntax
 set foldclose=all
 set foldlevel=99
+
+"" Python
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4

@@ -55,6 +55,7 @@ Plug 'neoclide/coc-json'
 Plug 'neoclide/coc-tabnine'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc-highlight'
+Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 "Plug 'valloric/youcompleteme'
 
 " Autoimport
@@ -83,6 +84,7 @@ Plug 'tpope/vim-repeat'
 
 " format
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+Plug 'tweekmonster/django-plus.vim', { 'for': ['python', 'htmldjango', 'html'] }
 
 " git
 Plug 'tpope/vim-fugitive'
