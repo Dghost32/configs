@@ -1,0 +1,16 @@
+[user]
+	email = cajimenezca@unal.edu.co
+	name = Carlos Jimenez
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = /home/carlos/configs/gitignore/Vim.gitignore
+[alias]
+	track-all-branches = "!git fetch -p && for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done; git branch -a"
+	cob = checkout -b
+	del = branch -D
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  undo = reset HEAD~1 --mixed
+	res = !git reset --hard
+	lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	
