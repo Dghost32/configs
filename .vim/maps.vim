@@ -6,13 +6,20 @@ nnoremap <Leader>T :TestFile<CR>
 nnoremap <Leader>TT :TestSuite<CR>
 
 " split resize
-nnoremap <Leader>} 10<C-w>>
-nnoremap <Leader>{ 10<C-w><
-nnoremap <Leader>+ 10<C-w>+
-nnoremap <Leader>- 10<C-w>-
+nnoremap <Leader><Down> :resize +2<CR> 
+nnoremap <Leader><Up> :resize -2<CR> 
+nnoremap <C-left> :vertical resize -2<CR> 
+nnoremap <C-right> :vertical resize +2<CR> 
+
+"" Move current line / block with Alt-j/k a la vscode.
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
 
 " quick semi
 nnoremap <silent>, $a;<Esc>
+
+"" TOGGLE TERM
+nnoremap <A-1> :ToggleTerm size=50 direction=vertical<CR>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -42,7 +49,7 @@ inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 
 " plugs 
-map <Leader>nt :NERDTreeFocus<CR>
+map <Leader>nt :NvimTreeFocus<CR>
 map <Leader>p :Files<CR>
 map <Leader>ag :Ag<CR>
 " Find files using Telescope command-line sugar.
@@ -52,6 +59,11 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 "nnoremap <leader>hh <cmd>Telescope keymaps<cr>
 nnoremap <leader>ss <cmd>Telescope spell_suggest<cr>
+
+"" GIT
+nnoremap <leader>go :Telescope git_status<CR>
+nnoremap <leader>gR :Gitsigns reset_buffer<CR>
+nnoremap <leader>gd :Gitsigns diffthis HEAD<CR>
 
 " Prettier
 nmap <Leader>py <Plug>(PrettierAsync)
@@ -90,8 +102,6 @@ nnoremap J mzJ`z
 " Moving text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap <Leader>k :m .-2<CR>==
-nnoremap <Leader>j :m .+1<CR>==
 
 " faster scrolling
 nnoremap <C-j> 10<C-e>

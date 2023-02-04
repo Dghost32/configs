@@ -23,11 +23,19 @@ Plug 'tomasr/molokai'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
+"" TERMINAL 
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
+"" MINIMAP 
+Plug 'echasnovski/mini.map'
+
 " icons
 Plug 'ryanoasis/vim-devicons'
  
 " Tree
 Plug 'scrooloose/nerdtree'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
 
 " Telescope
@@ -57,6 +65,7 @@ Plug 'neoclide/coc-tabnine'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc-highlight'
 Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+Plug 'nacro90/numb.nvim'
 "Plug 'valloric/youcompleteme'
 
 " Autoimport
@@ -83,6 +92,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'andrewradev/tagalong.vim'
 Plug 'tpope/vim-repeat'
 
+"" SOFT SCROLL
+Plug 'karb94/neoscroll.nvim'
+
 " format
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'tweekmonster/django-plus.vim', { 'for': ['python', 'htmldjango', 'html'] }
@@ -92,6 +104,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'APZelos/blamer.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
 
 " copilot
 "Plug 'github/copilot.vim'

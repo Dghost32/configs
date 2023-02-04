@@ -47,3 +47,10 @@ autocmd FileType python set ts=4
 autocmd FileType python set sts=4
 " COMMENT THIS LINE IF YOU'RE NOT WORKING WITH DJANGO
 au BufNewFile,BufRead *.html set filetype=htmldjango
+
+"" SETUPS
+lua require('neoscroll').setup()
+lua require('numb').setup()
+lua require("toggleterm").setup()
+lua require("nvim-tree").setup()
+lua require('gitsigns').setup()
