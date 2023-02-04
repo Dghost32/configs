@@ -49,7 +49,7 @@ local skipped_filetypes = { "markdown", "rst", "plaintext", "toml", "proto" }
 
 local join_paths = require("lvim.utils").join_paths
 
--- lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "gruvbox"
 
 return {
   templates_dir = join_paths(get_runtime_dir(), "site", "after", "ftplugin"),
