@@ -32,6 +32,18 @@ require('luasnip').filetype_extend("javascript", { "html" })
 -- FORMAT ON SAVE
 lvim.format_on_save = true
 
+require('code_runner').setup({
+  -- put here the commands by filetype
+  filetype = {
+    java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    python = "python3 -u",
+    typescript = "ts-node $fileName",
+    rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+    javascript = "node $fileName",
+    php = "php $fileName",
+  },
+})
+
 -- RANGE SELECTION
-vim.api.nvim_set_keymap("n", "<C-y>", "<Plug>(coc-range-select)", { silent = true })
-vim.api.nvim_set_keymap("x", "<C-y>", "<Plug>(coc-range-select)", { silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-y>", "<Plug>(coc-range-select)", { silent = true })
+-- vim.api.nvim_set_keymap("x", "<C-y>", "<Plug>(coc-range-select)", { silent = true })

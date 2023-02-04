@@ -2,9 +2,8 @@
 local core_plugins = {
   -- {"prettier/vim-prettier" }
   {
-    "neoclide/coc.nvim",
-    branch = "release",
-    run = "yarn install --frozen-lockfile"
+    "CRAG666/code_runner.nvim",
+    requires = "nvim-lua/plenary.nvim"
   },
   { "terryma/vim-multiple-cursors" },
   { "mg979/vim-visual-multi" },
