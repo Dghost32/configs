@@ -20,13 +20,13 @@ so ~/.vim/maps.vim
 "let g:molokai_original = 1
 
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
+"let g:gruvbox_contrast_dark = "hard"
+"colorscheme catppuccin-macchiato
 
 "set background=dark
 set laststatus=2
 set noshowmode
 highlight Normal ctermbg=NONE
-
 
 lua require'colorizer'.setup()
 
