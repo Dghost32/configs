@@ -48,9 +48,9 @@ local defaults = {
   normal_mode = {
     -- Better window movement
     ["<C-h>"] = "<C-w>h",
+    ["<C-l>"] = "<C-w>l",
     ["<C-j>"] = "<C-w>j",
     ["<C-k>"] = "<C-w>k",
-    ["<C-l>"] = "<C-w>l",
 
     -- Resize with arrows
     ["<C-Up>"] = ":resize -2<CR>",
@@ -69,11 +69,13 @@ local defaults = {
     ["]q"] = ":cnext<CR>",
     ["[q"] = ":cprev<CR>",
     ["<C-q>"] = ":call QuickFixToggle()<CR>",
+
+    -- movement
+    -- ["<C-j>"] = "10<C-e>",
+    -- ["<C-k>"] = "10<C-y>",
   },
 
   term_mode = {
-    -- Terminal window navigation
-    ["<C-h>"] = "<C-\\><C-N><C-w>h",
     ["<C-j>"] = "<C-\\><C-N><C-w>j",
     ["<C-k>"] = "<C-\\><C-N><C-w>k",
     ["<C-l>"] = "<C-\\><C-N><C-w>l",
@@ -98,7 +100,7 @@ local defaults = {
     -- navigate tab completion with <c-j> and <c-k>
     -- runs conditionally
     ["<C-j>"] = { 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true } },
-    ["<C-k>"] = { 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true } },
+    ["<C-k>"] = { 'pumvisible() ? ":<C-p>" : "\\<C-k>"', { expr = true, noremap = true } },
   },
 }
 

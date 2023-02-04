@@ -8,6 +8,7 @@ if not vim.tbl_contains(vim.opt.rtp:get(), base_dir) then
   vim.opt.rtp:append(base_dir)
 end
 
+
 require("lvim.bootstrap"):init(base_dir)
 
 require("lvim.config"):load()
@@ -23,3 +24,14 @@ Log:debug "Starting LunarVim"
 
 local commands = require "lvim.core.commands"
 commands.load(commands.defaults)
+
+-- NO SÉ DÓNDE PONERLO (:
+require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+require('luasnip').filetype_extend("javascript", { "html" })
+
+-- FORMAT ON SAVE
+lvim.format_on_save = true
+
+-- RANGE SELECTION
+vim.api.nvim_set_keymap("n", "<C-y>", "<Plug>(coc-range-select)", { silent = true })
+vim.api.nvim_set_keymap("x", "<C-y>", "<Plug>(coc-range-select)", { silent = true })
