@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v=openNvim
 alias c=openCode
-alias vc="cd ~/configs && lv"
+alias vc="cd ~/configs && v"
 alias lv=openLvim
 alias guc="git reset --soft HEAD~"
 alias e="exit"
