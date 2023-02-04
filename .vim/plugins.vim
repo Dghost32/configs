@@ -21,6 +21,7 @@ Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " icons
 Plug 'ryanoasis/vim-devicons'
@@ -94,6 +95,9 @@ Plug 'mhinz/vim-signify'
 
 " copilot
 "Plug 'github/copilot.vim'
+
+"" GṔT
+Plug 'jessfraz/openai.vim'
 
 " live server
 Plug 'manzeloth/live-server'

@@ -1,6 +1,13 @@
 [user]
 	email = cajimenezca@unal.edu.co
 	name = Carlos Jimenez
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[credential]
+	helper = cache
 [init]
 	defaultBranch = main
 [core]

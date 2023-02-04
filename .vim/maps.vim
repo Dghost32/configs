@@ -312,6 +312,6 @@ function Run()
   elseif bufType == "erlang"
     execute "!erl %"
   elseif bufType == "haskell"
-    execute "!runh
+    execute "!runh"
   endif
 endfunction

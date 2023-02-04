@@ -45,3 +45,5 @@ set foldlevel=99
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4
 autocmd FileType python set sts=4
+" COMMENT THIS LINE IF YOU'RE NOT WORKING WITH DJANGO
+au BufNewFile,BufRead *.html set filetype=htmldjango
