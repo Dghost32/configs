@@ -11,25 +11,10 @@ set showmatch
 set termguicolors
 set sw=2
 set relativenumber
-"so ~/.vim/vam.vim
-so ~/.vim/plugins.vim
-so ~/.vim/plugin-config.vim
-so ~/.vim/maps.vim
-
-"colorscheme molokai
-"let g:molokai_original = 1
-
-colorscheme gruvbox
-"let g:gruvbox_contrast_dark = "hard"
-"colorscheme catppuccin-macchiato
-
 "set background=dark
 set laststatus=2
 set noshowmode
 highlight Normal ctermbg=NONE
-
-lua require'colorizer'.setup()
-
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -48,9 +33,62 @@ autocmd FileType python set sts=4
 " COMMENT THIS LINE IF YOU'RE NOT WORKING WITH DJANGO
 au BufNewFile,BufRead *.html set filetype=htmldjango
 
-"" SETUPS
-lua require('neoscroll').setup()
-lua require('numb').setup()
-lua require("toggleterm").setup()
-lua require("nvim-tree").setup()
-lua require('gitsigns').setup()
+"""""""""""""""""""""
+"  CALL .VIM FILES  "
+"""""""""""""""""""""
+so ~/.vim/plugins.vim
+so ~/.vim/plugin-config.vim
+so ~/.vim/maps.vim
+
+"""""""""""""""""
+"  COLORSCHEME  "
+"""""""""""""""""
+colorscheme gruvbox
+
+""""""""""""""""
+"  LUA CONFIG  "
+""""""""""""""""
+lua << END
+require'colorizer'.setup()
+
+require('neoscroll').setup()
+
+require('numb').setup()
+
+ 
+require("nvim-tree").setup()
+
+require('gitsigns').setup()
+
+require("barbecue").setup()
+
+require('nvim-cursorline').setup()
+
+require('git-conflict').setup()
+
+require("toggleterm").setup({
+    active = true,
+    on_config_done = nil,
+    size = 50,
+    open_mapping = [[<c-t>]],
+    hide_numbers = true, -- hide the number column in toggleterm buffers
+    shade_terminals = true,
+		shading_factor = 2,
+    start_in_insert = true,
+    insert_mappings = true, -- whether or not the open mapping applies in insert mode
+    persist_size = false,
+    direction = "vertical",
+		shell = vim.o.shell,
+    close_on_exit = true, -- close the terminal window when the process exits
+    float_opts = {
+      border = "curved",
+      winblend = 0,
+      highlights = {
+        border = "Normal",
+        background = "Normal",
+      },
+    },
+  }
+)
+END
+
