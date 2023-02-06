@@ -12,9 +12,22 @@ Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'norcalli/nvim-colorizer.lua'
 
+"" SHADE
+Plug 'sunjon/shade.nvim'
+
 " status bar
 Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
+
+"" BREADCRUMB
+Plug 'utilyre/barbecue.nvim'
+Plug 'SmiteshP/nvim-navic'
+
+"" CURSORLINE
+Plug 'yamatsum/nvim-cursorline'
+
+"" TABLINE
+Plug 'crispgm/nvim-tabline'
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -105,6 +118,7 @@ Plug 'APZelos/blamer.nvim'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'akinsho/git-conflict.nvim'
 
 " copilot
 "Plug 'github/copilot.vim'

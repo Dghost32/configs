@@ -1,30 +1,41 @@
 let mapleader=" "
 
-" testing
+"""""""""""""
+"  TESTING  "
+"""""""""""""
 nnoremap <Leader>t :TestNearest<CR>
 nnoremap <Leader>T :TestFile<CR>
 nnoremap <Leader>TT :TestSuite<CR>
 
-" split resize
+""""""""""""""""""
+"  SPLIT RESIZE  "
+""""""""""""""""""
 nnoremap <Leader><Down> :resize +2<CR> 
 nnoremap <Leader><Up> :resize -2<CR> 
 nnoremap <C-left> :vertical resize -2<CR> 
 nnoremap <C-right> :vertical resize +2<CR> 
 
-"" Move current line / block with Alt-j/k a la vscode.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move current line / block with Alt-j/k a la vscode. "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
-" quick semi
+"""""""""""""""""""""""""
+"  QUICK SEMICOLON (;)  "
+"""""""""""""""""""""""""
 nnoremap <silent>, $a;<Esc>
 
-"" TOGGLE TERM
-nnoremap <A-1> :ToggleTerm size=50 direction=vertical<CR>
-
+""""""""""""""""""""
+"  WRITE AND EXIT  "
+""""""""""""""""""""
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
-" shorter commands
+
+""""""""""""""""""""""
+"  SHORTER COMMANDS  "
+""""""""""""""""""""""
 cnoreabbrev tree NERDTreeToggle
 cnoreabbrev blame Gblame
 cnoreabbrev find NERDTreeFind
@@ -46,13 +57,20 @@ inoremap <silent><expr> <C-j>
 " GO UP
 inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
+""""""""""""""
+"  NERDTREE  "
+""""""""""""""
+map <Leader>nt :NERDTreeFocus<CR>
 
-
-" plugs 
-map <Leader>nt :NvimTreeFocus<CR>
+"""""""""
+"  FZF  "
+"""""""""
 map <Leader>p :Files<CR>
 map <Leader>ag :Ag<CR>
-" Find files using Telescope command-line sugar.
+
+"""""""""""""""""""""""""""""""""
+"  TELESCOPE FILES AND BUFFERS  "
+"""""""""""""""""""""""""""""""""
 nnoremap <leader>ff <cmd>Telescope find_files prompt_prefix=🔍<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
@@ -60,21 +78,22 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 "nnoremap <leader>hh <cmd>Telescope keymaps<cr>
 nnoremap <leader>ss <cmd>Telescope spell_suggest<cr>
 
-"" GIT
-nnoremap <leader>go :Telescope git_status<CR>
-nnoremap <leader>gR :Gitsigns reset_buffer<CR>
-nnoremap <leader>gd :Gitsigns diffthis HEAD<CR>
-
-" Prettier
+"""""""""""""""""
+"  FORMAT FILE  "
+"""""""""""""""""
 nmap <Leader>py <Plug>(PrettierAsync)
 
-" tmux navigator
+""""""""""
+"  TMUX  "
+""""""""""
 nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <Leader><C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <Leader><C-l> :TmuxNavigateRight<cr>
 
-" Remap keys for gotos
+"""""""""""
+"  GO-TO  "
+"""""""""""
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
@@ -87,11 +106,15 @@ xmap s <Plug>VSurround
 " diagnostics
 nnoremap <leader>P :let @*=expand("%")<CR>
 
-" tabs navigation
+""""""""""""""""""""
+"  TAB NAVIGATION  "
+""""""""""""""""""""
 map <Leader>h :tabprevious<cr>
 map <Leader>l :tabnext<cr>
 
-" buffers
+"""""""""""""
+"  BUFFERS  "
+"""""""""""""
 map <Leader>ob :Buffers<cr>
 
 " keeping it centered
@@ -99,24 +122,38 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-" Moving text
+"""""""""""""""
+"  MOVE TEXT  "
+"""""""""""""""
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" faster scrolling
+""""""""""""""""""""""
+"  FASTER SCROLLING  "
+""""""""""""""""""""""
 nnoremap <C-j> 10<C-e>
 nnoremap <C-k> 10<C-y>
 nmap <Leader>s <Plug>(easymotion-s2)
 
-" git
-nnoremap <Leader>G :G<cr>
-nnoremap <Leader>gl :Gpull<cr>
-nnoremap <Leader>gp :Gpush<cr>
-nnoremap <Leader>gs :Telescope git_status<cr>
-nnoremap <Leader>gc :Telescope git_commits<cr>
-nnoremap <Leader>gb :Telescope git_branches<cr>
+"""""""""
+"  GIT  "
+"""""""""
+nnoremap <Leader>G :G<CR> 
+nnoremap <Leader>gl :Gpull<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gs :Telescope git_status<CR>
+nnoremap <Leader>gc :Telescope git_commits<CR>
+nnoremap <Leader>gb :Telescope git_branches<CR>
+nnoremap <leader>gR :Gitsigns reset_buffer<CR>
+nnoremap <leader>gd :Gitsigns diffthis HEAD<CR>
+" BLAME CURRENT LINE
+nnoremap <silent>gb :Gitsigns blame_line<CR>
+" SHOW CURRENT LINE DIFF
+nnoremap <leader>gh :Gitsigns preview_hunk<CR>
 
-" run current file
+"""""""""""""""""
+"  CODE RUNNER  "
+"""""""""""""""""
 nnoremap <Leader>x :call Run()<cr>
 
 " Use <c-space> to trigger completion.
@@ -125,7 +162,6 @@ nnoremap <Leader>x :call Run()<cr>
 "else
   inoremap <silent><expr> <c-space> coc#refresh()
 "endif
-
 
 set splitright
 function! OpenTerminal()
@@ -161,7 +197,7 @@ function! OpenTerminal()
     startinsert!
   endif
 endfunction
-nnoremap <C-t> :call OpenTerminal()<CR>
+"nnoremap <C-t> :call OpenTerminal()<CR>
 
 inoremap <expr> <CR> ParensIndent()
 
