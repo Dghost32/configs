@@ -1,6 +1,6 @@
 # Config
 
-some of my config files
+Some of my config files
 
 ## Usage
 
