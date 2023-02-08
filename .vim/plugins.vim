@@ -123,8 +123,9 @@ Plug 'akinsho/git-conflict.nvim'
 " copilot
 "Plug 'github/copilot.vim'
 
-"" GṔT
-Plug 'jessfraz/openai.vim'
+"" GPT
+Plug 'MunifTanjim/nui.nvim'
+"Plug 'jackMort/ChatGPT.nvim'
 
 " live server
 Plug 'manzeloth/live-server'

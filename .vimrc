@@ -1,7 +1,7 @@
 set number
 set mouse=a
 set numberwidth=1
-set clipboard=unnamed
+set clipboard+=unnamedplus
 syntax on
 set showcmd
 set ruler
@@ -54,7 +54,6 @@ require'colorizer'.setup()
 require('neoscroll').setup()
 
 require('numb').setup()
-
  
 require("nvim-tree").setup()
 
@@ -65,6 +64,8 @@ require("barbecue").setup()
 require('nvim-cursorline').setup()
 
 require('git-conflict').setup()
+
+-- require("chatgpt").setup()
 
 require("toggleterm").setup({
     active = true,
