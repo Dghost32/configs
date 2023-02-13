@@ -33,6 +33,16 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
 
+""""""""""""""""""""""""""""
+"  DJANGO SAVE AND FORMAT  "
+""""""""""""""""""""""""""""
+nnoremap <leader>ds :let prettier#autoformat=0<CR>:CocCommand htmldjango.djlint.format<CR>:w<CR>
+
+""""""""""""""""""""""""""""""
+"  MARKDOWN SAVE AND FORMAT  "
+""""""""""""""""""""""""""""""
+nnoremap <leader>ms :let prettier#autoformat=0<CR>:CocCommand editor.action.formatDocument<CR>:w<CR>
+
 """"""""""""""""""""""
 "  SHORTER COMMANDS  "
 """"""""""""""""""""""
