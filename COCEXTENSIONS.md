@@ -12,7 +12,9 @@
 - coc-highlight
 - coc-tsserver
 - coc-json
+- coc-sh
 
 ## Find more in
 
 <https://www.npmjs.com/search?q=keywords%3Acoc.nvim>
+

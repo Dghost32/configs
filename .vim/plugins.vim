@@ -105,6 +105,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'andrewradev/tagalong.vim'
 Plug 'tpope/vim-repeat'
 
+"" C
+"Plug 'vim-scripts/c.vim'
+
 "" SOFT SCROLL
 Plug 'karb94/neoscroll.nvim'
 
@@ -120,8 +123,11 @@ Plug 'mhinz/vim-signify'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'akinsho/git-conflict.nvim'
 
+"" BASH
+Plug 'vim-scripts/bash-support.vim'
+
 " copilot
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 "" GPT
 Plug 'MunifTanjim/nui.nvim'
