@@ -10,7 +10,7 @@
 	"coc.preferences.enableLinkedEditing": true,
 	"coc.preferences.formatOnSave": false,
 	"coc.source.file.ignoreHidden": false,
-	"clangd.path": "~/bin/clangd",
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
 	"clangd.arguments": [
 		"--query-driver=/usr/bin/clang++",
 		"--header-insertion-decorators=false",
@@ -111,5 +111,9 @@
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"typescript.inlayHints.enumMemberValues.enabled": true,
 	"typescript.preferences.useAliasesForRenames": false,
-	"languageserver": {}
+  "languageserver": {},
+  "coc.source.vimtex.filetypes": [
+    "tex",
+    "latex"
+  ]
 }

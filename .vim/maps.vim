@@ -369,5 +369,9 @@ function Run()
     execute "!erl %"
   elseif bufType == "haskell"
     execute "!runh"
+  elseif bufType == "make"
+    execute "!make -f %"
+  else 
+    execute "!echo 'This is not a programming language'"
   endif
 endfunction

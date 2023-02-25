@@ -65,6 +65,8 @@ require('nvim-cursorline').setup()
 
 require('git-conflict').setup()
 
+require('glow').setup()
+
 -- require("chatgpt").setup()
 
 require("toggleterm").setup({

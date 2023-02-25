@@ -140,4 +140,7 @@ Plug 'manzeloth/live-server'
 Plug 'stanangeloff/php.vim'
 Plug 'rayburgemeestre/phpfolding.vim'
 
+"" MARKDOWN MD
+Plug 'ellisonleao/glow.nvim'
+
 call plug#end()
