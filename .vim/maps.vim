@@ -96,10 +96,10 @@ nmap <Leader>py <Plug>(PrettierAsync)
 """"""""""
 "  TMUX  "
 """"""""""
-nnoremap <silent> <Leader><C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <Leader><C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <Leader><C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <Leader><C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
 """""""""""
 "  GO-TO  "

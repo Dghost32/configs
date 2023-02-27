@@ -71,15 +71,35 @@ Plug 'honza/vim-snippets'
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-solargraph'
 Plug 'neoclide/coc-snippets'
 Plug 'neoclide/coc-tsserver'
 Plug 'neoclide/coc-json'
 Plug 'neoclide/coc-tabnine'
-Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc-highlight'
 Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
-Plug 'nacro90/numb.nvim'
+Plug 'neoclide/coc-java'
+Plug 'neoclide/coc-html'
+Plug 'neoclide/coc-css'
+Plug 'neoclide/coc-prettier'
+Plug 'neoclide/coc-jest'
+Plug 'neoclide/coc-vimtex'
+Plug 'fannheyward/coc-pyright' 
+"" coc-jsref 
+Plug 'slonoed/jsref'
+"" coc-lua
+Plug 'LuaLS/lua-language-server'
+"" coc-markdownlint
+Plug 'DavidAnson/markdownlint'
+"" coc-sh
+Plug 'bash-lsp/bash-language-server'
+
+
 "Plug 'valloric/youcompleteme'
+
+""""""" LSP 
+"""""
+Plug 'neovim/nvim-lspconfig'
 
 " Autoimport
 "Plug 'ludovicchabant/vim-gutentags'
@@ -91,6 +111,9 @@ Plug 'janko-m/vim-test'
 
 " IDE
 Plug 'ervandew/supertab'
+Plug 'mattn/emmet-vim'
+"" numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
+Plug 'nacro90/numb.nvim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

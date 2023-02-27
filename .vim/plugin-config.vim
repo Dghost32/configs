@@ -112,41 +112,41 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
 " COC "
 """""""
 " Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
+"imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-h> for select text for visual placeholder of snippet.
-vmap <C-h> <Plug>(coc-snippets-select)
+"vmap <C-h> <Plug>(coc-snippets-select)
 
 " Use CTRL-S for selections ranges
 " Requires 'textDocument/selectionRange' support of language server
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+"nmap <silent> <C-s> <Plug>(coc-range-select)
+"xmap <silent> <C-s> <Plug>(coc-range-select)
 
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<C-j>'
+ "Use <C-j> for jump to next placeholder, it's default of coc.nvim
+"let g:coc_snippet_next = '<C-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<C-k>'
+"let g:coc_snippet_prev = '<C-k>'
 
 " Use <C-h> for both expand and jump (make expand higher priority.)
-imap <C-h> <Plug>(coc-snippets-expand-jump)
+"imap <C-h> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet
-xmap <leader>x  <Plug>(coc-convert-snippet)
+"xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " Add `:Format` command to format current buffer
-command! -nargs=0 Format :call CocActionAsync('format')
+"command! -nargs=0 Format :call CocActionAsync('format')
 " Add `:Fold` command to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+"command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+"command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:coc_global_extensions = [
-      \ 'coc-tsserver',
-      \ 'coc-eslint',
-      \ 'coc-snippets',
-      \ ]
+"let g:coc_global_extensions = [
+      "\ 'coc-tsserver',
+      "\ 'coc-eslint',
+      "\ 'coc-snippets',
+      "\ ]
 
 
