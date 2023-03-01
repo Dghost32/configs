@@ -1,6 +1,7 @@
 -- local require = require("lvim.utils.require").require
 local core_plugins = {
   -- {"prettier/vim-prettier" }
+  {"github/copilot.vim"},
   {
     "CRAG666/code_runner.nvim",
     requires = "nvim-lua/plenary.nvim"

@@ -1,4 +1,5 @@
 -- Configuración general
+vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.numberwidth = 1
 vim.opt.clipboard = 'unnamedplus'

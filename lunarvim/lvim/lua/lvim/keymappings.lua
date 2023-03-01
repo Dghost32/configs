@@ -46,6 +46,9 @@ local defaults = {
   },
 
   normal_mode = {
+    -- git
+    ["<silent>GB"] = "<Esc>:Gitsign blame_line<CR>",
+
     -- Better window movement
     ["<C-h>"] = "<C-w>h",
     ["<C-l>"] = "<C-w>l",
@@ -63,7 +66,7 @@ local defaults = {
     ["<A-k>"] = ":m .-2<CR>==",
 
     -- Open git fugitive
-    ["<leader-G>"] = ":G",
+    ["<leader>G"] = ":G",
 
     -- QuickFix
     ["]q"] = ":cnext<CR>",
@@ -97,10 +100,11 @@ local defaults = {
   },
 
   command_mode = {
-    -- navigate tab completion with <c-j> and <c-k>
+    -- navigate tab completion with <c-j> and <c-k> and <c-l> to accept
     -- runs conditionally
     ["<C-j>"] = { 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true } },
     ["<C-k>"] = { 'pumvisible() ? ":<C-p>" : "\\<C-k>"', { expr = true, noremap = true } },
+    ["C-l"] = { 'pumvisible() ? "\\<CR>" : "\\<C-l>"', { expr = true, noremap = true } },
   },
 }
 
