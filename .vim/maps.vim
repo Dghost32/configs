@@ -71,6 +71,7 @@ inoremap <expr><C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 "  NERDTREE  "
 """"""""""""""
 map <Leader>nt :NERDTreeFocus<CR>
+map <Leader>e :NERDTreeToggle<CR>
 
 """""""""
 "  FZF  "
