@@ -94,6 +94,8 @@ Plug 'DavidAnson/markdownlint'
 "" coc-sh
 Plug 'bash-lsp/bash-language-server'
 
+"" TREE SITTER
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 "Plug 'valloric/youcompleteme'
 
