@@ -31,7 +31,7 @@ vim.opt.foldlevel = 99
 vim.cmd('autocmd FileType python set sw=4')
 vim.cmd('autocmd FileType python set ts=4')
 vim.cmd('autocmd FileType python set sts=4')
-vim.cmd('autocmd BufNewFile,BufRead *.html set filetype=htmldjango')
+--vim.cmd('autocmd BufNewFile,BufRead *.html set filetype=htmldjango')
 
 -- Llamado a archivos .vim
 vim.cmd('so ~/.vim/plugins.vim')
