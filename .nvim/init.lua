@@ -22,7 +22,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Plegado
-vim.opt.foldmethod = 'syntax'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldclose = 'all'
 vim.opt.foldlevel = 99
 
@@ -116,4 +117,7 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+    enable = true
+  }
 }
