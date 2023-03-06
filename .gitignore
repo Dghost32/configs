@@ -22,4 +22,6 @@ tags
 # Persistent undo
 [._]*.un~
 
+/.vim/plugged/*
+
 # End of https://www.toptal.com/developers/gitignore/api/vim

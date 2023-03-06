@@ -39,7 +39,7 @@ vim.cmd('so ~/.vim/plugin-config.vim')
 vim.cmd('so ~/.vim/maps.vim')
 
 -- Configuración de colores
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme catppuccin')
 
 -- Configuración de Lua
 require 'colorizer'.setup()
