@@ -31,10 +31,12 @@ Plug 'crispgm/nvim-tabline'
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 
 "" TERMINAL 
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
