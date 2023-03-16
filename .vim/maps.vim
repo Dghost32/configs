@@ -126,7 +126,7 @@ map <Leader>l :tabnext<cr>
 """""""""""""
 "  BUFFERS  "
 """""""""""""
-map <Leader>ob :Buffers<cr>
+map <Leader>ob :Telescope buffers<cr>
 
 " keeping it centered
 nnoremap n nzzzv

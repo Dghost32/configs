@@ -113,6 +113,9 @@ Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'tyewang/vimux-jest-test'
 Plug 'janko-m/vim-test'
 
+"" IMAGE VISUALIZER
+Plug 'edluffy/hologram.nvim'
+
 " IDE
 Plug 'ervandew/supertab'
 Plug 'mattn/emmet-vim'
