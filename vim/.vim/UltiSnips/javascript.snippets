@@ -1,0 +1,143 @@
+extends html
+
+# IMPORTS #
+snippet i "import from ''" b
+import ${2:{ $3 }} from '$1'
+endsnippet
+
+snippet ed "import from ''" b
+export default $1
+endsnippet
+
+#############
+# FUNCTIONS #
+#############
+snippet af "arrow function () => {}" i
+const $1 = ${2:($3)} => ${4:{
+  $5
+}};
+endsnippet
+
+snippet fn "function () {}" b
+function $1 ($2) {
+  $3
+}
+endsnippet
+
+snippet afa "arrow function async () => {}" i
+const $1 = async ${2:($3)} => ${4:{
+  $5
+}};
+endsnippet
+
+snippet fna "async function () {}" b
+async function $1 ($2) {
+  $3
+}
+endsnippet
+
+#########################
+# VARIABLE DECLARATIONS #
+#########################
+snippet co "const = " b
+const ${1:{ $2 }} = ${3:{
+  $4
+}}
+endsnippet
+
+snippet arr "array = []" b
+const $1 = [
+  $2
+]
+endsnippet
+
+snippet des "const {} =" b
+const { $1 } = $2
+endsnippet
+
+# DEBUG #
+snippet clg "console.log()" b
+console.log(${1:'$2', $3})
+endsnippet
+
+# TESTS #
+snippet it "it('', () => {})" b
+it('$1', () => {
+  $2
+})
+endsnippet
+
+snippet test "test('', () => {})" b
+test('$1', () => {
+  $2
+})
+endsnippet
+
+snippet desc "describe('', () => {})" b
+describe('$1', () => {
+  $2
+})
+endsnippet
+
+#################
+# ARRAY METHODS #
+#################
+snippet a.map "map" i
+${1:array}.map((${2:element})=>{
+  ${3://code}
+})
+endsnippet
+
+snippet .map "map" i
+.map((${1:element})=>{
+  ${2://code}
+})
+endsnippet
+
+snippet a.fe "for each" i
+${1:array}.forEach((${2:element})=>{
+  ${3://code}
+})
+endsnippet
+
+snippet .fe "for each" i
+.forEach((${1:element})=>{
+  ${2://code}
+})
+endsnippet
+
+snippet a.re "reduce" i
+${1:array}.reduce((${2:acc}, ${3:current})=>{
+  ${5://code}
+}, ${4:initialValue})
+endsnippet
+
+snippet .re "reduce" i
+.reduce((${2:acc}, ${3:current})=>{
+  ${5://code}
+}, ${4:initialValue})
+endsnippet
+
+snippet a.s "some" i
+${1:array}.some((${2:element})=>${3:element})
+endsnippet
+
+snippet .s "some" i
+.some((${1:element})=>${2:element})
+endsnippet
+ 
+snippet a.f "filter" i
+${1:array}.filter((${2:element})=>${3:element})
+endsnippet
+
+snippet .f "filter" i
+.filter((${1:element})=>${2:element})
+endsnippet 
+
+#################
+# OPERATORS     #
+#################
+
+snippet ? "ternary operator" i
+  ${1:condition} ? ${2:true} : ${3:false}
+endsnippet

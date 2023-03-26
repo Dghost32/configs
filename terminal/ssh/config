@@ -1,0 +1,10 @@
+Host github.com
+  Hostname github.com
+  IdentityFile ~/.ssh/git
+  IdentitiesOnly yes
+
+#personal gitlab account
+Host gitlab.com
+  Hostname gitlab.com
+  IdentityFile ~/.ssh/git
+  IdentitiesOnly yes
