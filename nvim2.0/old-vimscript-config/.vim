@@ -1,1 +1,0 @@
-/home/carlos/configs/.vim
