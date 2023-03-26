@@ -62,3 +62,7 @@ cmd('colorscheme catppuccin')
 -- Coq completion settings
 -- Set recommended to false
 vim.g.coq_settings = {["keymap.recommended"] = false}
+
+-- Prettier format on save
+cmd("let g:prettier#autoformat = 1")
+cmd("let g:prettier#autoformat_require_pragma = 0")
