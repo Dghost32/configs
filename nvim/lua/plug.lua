@@ -27,6 +27,18 @@ return require('packer').startup(function(use)
   use { 'neovim/nvim-lspconfig' }                    -- collection of configurations for built-in LSP client
   use "williamboman/mason.nvim"                      -- easy install of LSP servers
   use "williamboman/mason-lspconfig.nvim"            -- easy install of LSP servers
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    requires = {
+        {"nvim-tree/nvim-web-devicons"},
+        --Please make sure you install markdown and markdown_inline parser
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+  })
 
   -- [[ Completion ]]
   use { 'ms-jpq/coq_nvim' }
