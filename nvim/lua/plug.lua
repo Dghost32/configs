@@ -79,15 +79,6 @@ return require('packer').startup(function(use)
           -- requires = { "nvim-treesitter/nvim-treesitter" },
         },
       },
-      {
-        "glepnir/lspsaga.nvim",
-        opt = true,
-        branch = "main",
-        event = "LspAttach",
-        config = function()
-          require("lspsaga").setup({})
-        end,
-      },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
@@ -100,6 +91,16 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   }
+
+  --use {
+  --"glepnir/lspsaga.nvim",
+  --opt = true,
+  --branch = "main",
+  --event = "LspAttach",
+  --config = function()
+  --require("lspsaga").setup({})
+  --end,
+  --}
 
   -- [[ Treesitter ]]
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlighting

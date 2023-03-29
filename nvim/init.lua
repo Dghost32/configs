@@ -12,9 +12,9 @@ require('keys') -- Keymaps
 require('plug') -- Plugins
 
 -- [[ PLUGINS CONFIGS ]]
-require('plugins.lsp')            -- Language Servers
-require('plugins.mason')          -- LSP Install
-require('plugins.lspsaga')        -- LSP Saga, LSP UI
+require('plugins.lsp')   -- Language Servers
+require('plugins.mason') -- LSP Install
+--require('plugins.lspsaga')        -- LSP Saga, LSP UI
 require('plugins.cmp')
 require('plugins.ts')             -- Treesiter
 require('plugins.nvimTree')       -- Filesystem navigation
