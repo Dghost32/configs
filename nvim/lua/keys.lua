@@ -23,9 +23,10 @@ map('i', '<C-q>', '<Esc>:q<CR>')
 map('v', '<C-q>', '<Esc>:q<CR>')
 
 -- [[ Copilot ]]
-map('i', '<C-c>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+map('i', '<C-c>', 'copilot#Accept("<CR>")', { silent = true, expr = true }) -- accept suggestion with Ctrl+c
 
 -- [[ Run code ]]
+map('n', '<leader>x', '<cmd>RunCode<CR>') -- run code with space+x
 
 -- [[ LSP ]]
 map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
