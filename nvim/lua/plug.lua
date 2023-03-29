@@ -154,6 +154,7 @@ return require('packer').startup(function(use)
     "michaelb/sniprun",
     run = "bash install.sh"
   }
+  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' } -- code runner
 
   -- [[ Trouble nvim ]]
   use {

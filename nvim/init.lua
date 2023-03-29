@@ -12,10 +12,9 @@ require('keys') -- Keymaps
 require('plug') -- Plugins
 
 -- [[ PLUGINS CONFIGS ]]
-require('plugins.lsp')   -- Language Servers
-require('plugins.mason') -- LSP Install
---require('plugins.lspsaga')        -- LSP Saga, LSP UI
-require('plugins.cmp')
+require('plugins.lsp')            -- Language Servers
+require('plugins.mason')          -- LSP Install
+require('plugins.cmp')            -- Autocompletion
 require('plugins.ts')             -- Treesiter
 require('plugins.nvimTree')       -- Filesystem navigation
 require('plugins.lualine')        -- Status Line
@@ -28,4 +27,5 @@ require('plugins.toggleterm')     -- Terminal
 require('plugins.telescope')      -- Telescope
 require('plugins.neoscroll')      -- Neoscroll, smooth scrolling
 require('plugins.gitsigns')       -- Gitsigns
-require('plugins.webTools')
+require('plugins.webTools')       -- Web Tools
+require('plugins.codeRunner')     -- Code Runner
