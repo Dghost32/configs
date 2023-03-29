@@ -1,5 +1,5 @@
 --[[ keys.lua ]]
-function map(mode, lhs, rhs, opts)
+local function map(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
@@ -24,6 +24,8 @@ map('v', '<C-q>', '<Esc>:q<CR>')
 
 -- [[ Copilot ]]
 map('i', '<C-c>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+-- [[ Run code ]]
 
 -- [[ LSP ]]
 map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')

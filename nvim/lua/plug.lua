@@ -79,6 +79,15 @@ return require('packer').startup(function(use)
           -- requires = { "nvim-treesitter/nvim-treesitter" },
         },
       },
+      {
+        "glepnir/lspsaga.nvim",
+        opt = true,
+        branch = "main",
+        event = "LspAttach",
+        config = function()
+          require("lspsaga").setup({})
+        end,
+      },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
@@ -139,10 +148,13 @@ return require('packer').startup(function(use)
       vim.cmd("silent !yarn install --frozen-lockfile --production")
     end
   }
-
   use 'ray-x/web-tools.nvim' -- web tools
-  -- Lua
-  -- Lua
+  use {
+    "michaelb/sniprun",
+    run = "bash install.sh"
+  }
+
+  -- [[ Trouble nvim ]]
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",

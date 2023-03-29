@@ -16,7 +16,3 @@ const reverseArrayInPlace = (array) => {
 };
 
 console.log(reverseArray(["A", "B", "C"]));
-
-if (true) {
-  console.log(reverseArrayInPlace([1, 2, 3, 4, 5]));
-}
