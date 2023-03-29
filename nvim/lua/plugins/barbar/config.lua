@@ -17,10 +17,6 @@ require 'bufferline'.setup {
   --  - middle-click: delete buffer
   clickable = true,
 
-  -- Excludes buffers from the tabline
-  exclude_ft = { 'javascript' },
-  exclude_name = { 'package.json' },
-
   -- A buffer to this direction will be focused (if it exists) when closing the current buffer.
   -- Valid options are 'left' (the default) and 'right'
   focus_on_close = 'left',

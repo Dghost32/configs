@@ -91,16 +91,7 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   }
-
-  --use {
-  --"glepnir/lspsaga.nvim",
-  --opt = true,
-  --branch = "main",
-  --event = "LspAttach",
-  --config = function()
-  --require("lspsaga").setup({})
-  --end,
-  --}
+  use { "glepnir/lspsaga.nvim" } -- lsp saga
 
   -- [[ Treesitter ]]
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlighting
