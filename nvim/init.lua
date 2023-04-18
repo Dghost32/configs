@@ -6,10 +6,11 @@ vim.g.mapleader = "<Space>"
 vim.g.localleader = "<Space>"
 
 -- [[ IMPORTS ]]
-require('vars') -- Variables
-require('opts') -- Options
-require('keys') -- Keymaps
-require('plug') -- Plugins
+require('vars')        -- Variables
+require('opts')        -- Options
+require('keys')        -- Keymaps
+require('plug')        -- Plugins
+require('diagnostics') -- Diagnostics
 
 -- [[ PLUGINS CONFIGS ]]
 require('plugins.lsp')            -- Language Servers
@@ -30,3 +31,4 @@ require('plugins.gitsigns')       -- Gitsigns
 require('plugins.webTools')       -- Web Tools
 require('plugins.codeRunner')     -- Code Runner
 require('plugins.lspsaga')        -- LSP Saga
+require('plugins.hlchunk')        -- Highlight current chunk

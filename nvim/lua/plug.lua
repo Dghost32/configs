@@ -22,30 +22,6 @@ return require('packer').startup(function(use)
   use { 'morhetz/gruvbox' } -- colorscheme
   use { 'catppuccin/nvim' } -- colorscheme
 
-  -- [[ Dashboard ]]
-  use {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        config = {
-          shortcut = {
-            -- action can be a function type
-            { desc = string, group = 'highlight group', key = 'shortcut key', action = 'action when you press key' },
-          },
-          packages = { enable = true }, -- show how many plugins neovim loaded
-          -- limit how many projects list, action when you press key or enter it will run this action.
-          -- action can be a functino type, e.g.
-          -- action = func(path) vim.cmd('Telescope find_files cwd=' .. path) end
-          project = { enable = true, limit = 8, icon = 'your icon', label = '', action = 'Telescope find_files cwd=' },
-          mru = { limit = 10, icon = 'your icon', label = '', },
-          footer = {}, -- footer
-        }
-      }
-    end,
-    requires = { 'nvim-tree/nvim-web-devicons' }
-  }
-
   -- [[ Copilot ]]
   use { 'github/copilot.vim' } -- copilot
 
@@ -91,6 +67,7 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
   }
+  use { 'onsails/lspkind.nvim' } -- lsp icons
   use { "glepnir/lspsaga.nvim" } -- lsp saga
 
   -- [[ Treesitter ]]
@@ -118,6 +95,9 @@ return require('packer').startup(function(use)
 
   -- [[ BarBar ]]
   use { 'romgrk/barbar.nvim' } -- bufferline
+
+  -- [[ indent line ]]
+  use { 'lukas-reineke/indent-blankline.nvim' } -- indent line
 
   -- [[ Terminal ]]
   use { "akinsho/toggleterm.nvim", tag = '*' }
@@ -153,14 +133,10 @@ return require('packer').startup(function(use)
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
       }
     end
   }
 
   -- [[ Git ]]
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- git
-  --use { 'sindrets/diffview.nvim' }                  -- git
 end)

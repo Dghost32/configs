@@ -113,6 +113,8 @@ alias lv=openLvim
 alias guc="git reset --soft HEAD~"
 alias e="exit"
 alias sr="sudo reboot"
+alias job="cd ~/Job"
+alias un="cd ~/Unal"
 
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"

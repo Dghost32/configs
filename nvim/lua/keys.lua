@@ -56,13 +56,6 @@ map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>')
 map('n', 'gb', '<cmd>Gitsigns blame_line<CR>', { silent = true })
 map('n', '<leader>gd', '<cmd>Gitsigns diffthis HEAD<CR>')
 
--- [[ COQ - Completition menu movement ]]
---map('i', '<Esc>', "pumvisible() ? '<C-e><Esc>' : '<Esc>'", { expr = true, silent = true }) -- exit menu
---map('i', '<BS>', "pumvisible() ? '<C-e><BS>' : '<BS>'", { expr = true, silent = true }) -- use backspace in insert mode
---map('i', '<C-l>', "pumvisible() ? (complete_info().selected == -1 ? '<C-e><CR>' : '<C-y>') : '<CR>'", { expr = true, silent = true }) -- confirm
---map('i', '<C-j>', "pumvisible() ? '<C-n>' : '<Tab>'", { expr = true, silent = true }) -- go down with tab
---map('i', '<C-u>', "pumvisible() ? '<C-p>' : '<BS>'", { expr = true, silent = true }) -- go up
-
 -- [[ Testing ]]
 map('n', '<leader>tt', ':TestNearest<CR>')
 map('n', '<leader>tf', ':TestFile<CR>')
@@ -109,11 +102,6 @@ map('n', '<leader>nt', ':NvimTreeToggle<CR>')   -- toggle nvim tree
 map('n', '<leader>nr', ':NvimTreeRefresh<CR>')  -- refresh nvim tree
 map('n', '<leader>nf', ':NvimTreeFindFile<CR>') -- find file in nvim tree
 map('n', '<leader>e', ':NvimTreeFocus<CR>')     -- find file in nvim tree
-
--- [[ TMUX ]]
---map('n', '<C-h>', ':TmuxNavigateLeft<CR>')
---map('n', '<C-l>', ':TmuxNavigateRight<CR>')
---map('n', '<leader><C-j>', ':TmuxNavigateDown<CR>')
 
 -- [[ Window navigation ]]
 map('n', '<C-h>', '<C-w>h', { silent = true })
