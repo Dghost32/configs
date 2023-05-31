@@ -43,4 +43,4 @@ so ~/.vim/maps.vim
 """""""""""""""""
 "  COLORSCHEME  "
 """""""""""""""""
-colorscheme gruvbox
+colorscheme catppuccin 

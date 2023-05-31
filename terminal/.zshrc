@@ -72,8 +72,14 @@ plugins=(
   git
   zsh-syntax-highlighting
   zsh-interactive-cd
+  zsh-autosuggestions
   yarn
   tmux
+  ag
+  thefuck
+  themes
+  web-search
+  copyfile
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -176,3 +182,4 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/bin/java
+source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
