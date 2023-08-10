@@ -35,6 +35,12 @@ map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 
+-- [[LSP SAGA]]
+map('n', '<leader>xn', '<cmd>Lspsaga diagnostic_jump_next<CR>')
+map('n', '<leader>xp', '<cmd>Lspsaga diagnostic_jump_prev<CR>')
+map('n', '<leader>hh', '<cmd>Lspsaga show_line_diagnostics<CR>')
+map('n', '<leader>xx', '<cmd>Lspsaga show_buf_diagnostics<CR>')
+
 -- [[ Telescope - Files & Buffers ]]
 map('n', '<leader>ob', '<cmd>Telescope buffers<CR>')
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')

@@ -28,7 +28,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
   desc = "show diagnostics menu on cursor hold"
 })
 
-
 -- [[ Context ]]
 opt.number = true         -- bool: Show line numbers
 opt.numberwidth = 1       -- num:  Width of line number column

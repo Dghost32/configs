@@ -182,4 +182,4 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/bin/java
-source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
