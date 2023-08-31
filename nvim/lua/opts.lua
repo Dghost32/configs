@@ -3,12 +3,13 @@ local opt = vim.opt -- set
 local cmd = vim.cmd -- let
 local api = vim.api
 
--- place this before colorscheme is set
+-- this is needed to make the underline work
 vim.api.nvim_create_autocmd('ColorScheme', {
   command = [[highlight DiagnosticUnderlineError gui=undercurl]],
   desc = "undercurl errors"
 })
 
+-- this is needed to make the underline work
 vim.api.nvim_create_autocmd('ColorScheme', {
   command = [[highlight DiagnosticUnderlineWarn gui=undercurl]],
   desc = "undercurl warnings"
@@ -92,5 +93,5 @@ cmd('colorscheme catppuccin')
 vim.g.coq_settings = { ["keymap.recommended"] = false }
 
 -- Prettier format on save
-cmd("let g:prettier#autoformat = 1")
+cmd("let g:prettier#autoformat = 0")
 cmd("let g:prettier#autoformat_require_pragma = 0")

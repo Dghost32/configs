@@ -9,7 +9,6 @@ return require('packer').startup(function(use)
   }
 
   -- [[ Theme ]]
-  use { 'mhinz/vim-startify' }         -- start screen
   use { 'DanilaMihailov/beacon.nvim' } -- cursor jump
   use {
     'nvim-lualine/lualine.nvim',       -- statusline
@@ -114,13 +113,6 @@ return require('packer').startup(function(use)
   use { 'preservim/nerdcommenter' }                                    -- comment
   use { 'tpope/vim-surround' }                                         -- surround
   use { 'karb94/neoscroll.nvim' }                                      -- smooth scroll
-  use {
-    'prettier/vim-prettier',
-    config = function()
-      vim.cmd("silent !yarn install --frozen-lockfile --production")
-    end
-  }
-  use 'ray-x/web-tools.nvim' -- web tools
   use {
     "michaelb/sniprun",
     run = "bash install.sh"

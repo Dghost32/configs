@@ -24,10 +24,10 @@ keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+--keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 -- If you want to keep the hover window in the top right hand corner,
---keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
+keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
 
 -- Floating terminal
 keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")

@@ -29,7 +29,6 @@ require('plugins.toggleterm')     -- Terminal
 require('plugins.telescope')      -- Telescope
 require('plugins.neoscroll')      -- Neoscroll, smooth scrolling
 require('plugins.gitsigns')       -- Gitsigns
-require('plugins.webTools')       -- Web Tools
 require('plugins.codeRunner')     -- Code Runner
 require('plugins.lspsaga')        -- LSP Saga
 require('plugins.hlchunk')        -- Highlight current chunk

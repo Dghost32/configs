@@ -5,7 +5,7 @@ local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body)      -- For `ultisnips` users.
+      --vim.fn["UltiSnips#Anon"](args.body)      -- For `ultisnips` users.
       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
@@ -22,7 +22,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = "ultisnips" },
+    --{ name = "ultisnips" },
     { name = 'luasnip' },
   }, {
     { name = 'buffer' },
