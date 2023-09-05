@@ -26,7 +26,7 @@ lsp.format_on_save({
     ['rust_analyzer'] = { 'rust' },
     ['tsserver'] = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
     ['pyright'] = { 'python' },
-    ['clang'] = { 'c', 'cpp' }
+    ['clangd'] = { 'c', 'cpp' }
   }
 })
 
