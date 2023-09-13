@@ -1,1 +1,4 @@
-require("barbecue").setup()
+-- Lua
+require('barbecue').setup {
+  theme = 'tokyonight',
+}

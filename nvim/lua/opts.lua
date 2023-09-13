@@ -1,7 +1,6 @@
 --[[ opts.lua ]]
 local opt = vim.opt -- set
 local cmd = vim.cmd -- let
-local api = vim.api
 
 -- this is needed to make the underline work
 vim.api.nvim_create_autocmd('ColorScheme', {
@@ -16,13 +15,12 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 --transparent background
-vim.api.nvim_create_autocmd('ColorScheme', {
-  command = [[highlight Normal guibg=NONE ctermbg=NONE]],
-  desc = "transparent background"
-})
+--vim.api.nvim_create_autocmd('ColorScheme', {
+--command = [[highlight Normal guibg=NONE ctermbg=NONE]],
+--desc = "transparent background"
+--})
 
 -- show diagnostics menu on cursor hold
---vim.api.nvim_create_autocmd("CursorHold", "lua vim.diagnostic.open_float()")
 vim.api.nvim_create_autocmd("CursorHold", {
   command =
   'lua vim.diagnostic.open_float({win_opts = {border = "rounded", focusable = false, title = "Diagnostics", position = "bottomleft"}})',
@@ -86,7 +84,7 @@ opt.foldlevel = 99                          -- num:  Initial fold level
 opt.foldclose = 'all'                       -- str:  Close all folds when opening a new one
 
 -- [[ Configuración de colores ]]
-cmd('colorscheme catppuccin')
+cmd('colorscheme tokyonight-night')
 
 -- Coq completion settings
 -- Set recommended to false

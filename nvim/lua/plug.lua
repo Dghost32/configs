@@ -18,8 +18,10 @@ return require('packer').startup(function(use)
     }
   }
   use { 'Mofiqul/dracula.nvim' }
-  use { 'morhetz/gruvbox' } -- colorscheme
-  use { 'catppuccin/nvim' } -- colorscheme
+  use { 'morhetz/gruvbox' }       -- colorscheme
+  use { 'catppuccin/nvim' }       -- colorscheme
+  use { "lunarvim/lunar.nvim" }   -- colorscheme
+  use { "folke/tokyonight.nvim" } -- colorscheme
 
   -- [[ Copilot ]]
   use { 'github/copilot.vim' } -- copilot
