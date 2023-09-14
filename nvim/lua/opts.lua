@@ -84,7 +84,7 @@ opt.foldlevel = 99                          -- num:  Initial fold level
 opt.foldclose = 'all'                       -- str:  Close all folds when opening a new one
 
 -- [[ Configuración de colores ]]
-cmd('colorscheme tokyonight-night')
+cmd('colorscheme catppuccin')
 
 -- Coq completion settings
 -- Set recommended to false

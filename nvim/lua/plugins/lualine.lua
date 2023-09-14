@@ -3,7 +3,7 @@
 -- MIT license, see LICENSE for more details.
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
+    theme = 'catppuccin',
     component_separators = '|',
     section_separators = { left = '', right = '' },
   },

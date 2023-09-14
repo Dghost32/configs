@@ -1,4 +1,4 @@
 -- Lua
 require('barbecue').setup {
-  theme = 'tokyonight',
+  theme = 'catppuccin',
 }
