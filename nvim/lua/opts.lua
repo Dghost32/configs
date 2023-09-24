@@ -14,6 +14,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   desc = "undercurl warnings"
 })
 
+-- open alpha
+vim.api.nvim_create_autocmd({ "VimEnter" }, { command = [[hi Normal ctermbg=none]], desc = "open alpha" })
+
 --transparent background
 --vim.api.nvim_create_autocmd('ColorScheme', {
 --command = [[highlight Normal guibg=NONE ctermbg=NONE]],
@@ -43,10 +46,11 @@ opt.showcmd = true -- bool: Show command in status line
 opt.updatetime = 300 -- num:  Delay before swap file is saved [[ Copilot ]]
 
 -- [[ Cursor ]]
-opt.cursorline = true    -- bool: Highlight the current line
-opt.cursorcolumn = false -- bool: Highlight the current column
-opt.lazyredraw = true    -- bool: Don't redraw while executing macros
-opt.mouse = 'a'          -- str:  Mouse mode
+opt.cursorline = true         -- bool: Highlight the current line
+opt.cursorcolumn = false      -- bool: Highlight the current column
+opt.lazyredraw = true         -- bool: Don't redraw while executing macros
+opt.mouse = 'a'               -- str:  Mouse mode
+opt.whichwrap:append "<>[]hl" -- str:  Characters to wrap around
 
 -- [[ Filetypes ]]
 opt.encoding = 'utf8'     -- str:  String encoding to use
@@ -84,7 +88,7 @@ opt.foldlevel = 99                          -- num:  Initial fold level
 opt.foldclose = 'all'                       -- str:  Close all folds when opening a new one
 
 -- [[ Configuración de colores ]]
-cmd('colorscheme tokyonight-night')
+cmd('colorscheme catppuccin')
 
 -- Coq completion settings
 -- Set recommended to false

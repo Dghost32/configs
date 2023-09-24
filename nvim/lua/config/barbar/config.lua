@@ -1,7 +1,7 @@
 -- Set barbar's options
 require 'bufferline'.setup {
   -- Enable/disable animations
-  animation = true,
+  animation = false,
 
   -- Enable/disable auto-hiding the tab bar when there is a single buffer
   auto_hide = false,
@@ -24,9 +24,6 @@ require 'bufferline'.setup {
   -- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
   --hide = {extensions = true, inactive = true},
 
-  -- Disable highlighting alternate buffers
-  highlight_alternate = false,
-
   -- Disable highlighting file icons in inactive buffers
   highlight_inactive_file_icons = false,
 
@@ -39,15 +36,15 @@ require 'bufferline'.setup {
     separator = { enabled = true, left = '▎', right = '▎' },
     close = { enabled = true, icon = '' },
     close_modified = { enabled = true, icon = '●' },
-    pinned = { enabled = true, button = '車' },
+    pinned = { enabled = true, button = '󰐄' },
     diagnostics = {
       -- you can use a list
-      { enabled = true, icon = 'ﬀ' }, -- ERROR
-      { enabled = false },            -- WARN
-      { enabled = false },            -- INFO
-      { enabled = true },             -- HINT
+      { enabled = true, icon = '' }, -- ERROR
+      { enabled = false }, -- WARN
+      { enabled = false }, -- INFO
+      { enabled = true }, -- HINT
       -- OR `vim.diagnostic.severity`
-      [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+      [vim.diagnostic.severity.ERROR] = { enabled = true, icon = '' },
       [vim.diagnostic.severity.WARN] = { enabled = false },
       [vim.diagnostic.severity.INFO] = { enabled = false },
       [vim.diagnostic.severity.HINT] = { enabled = true },

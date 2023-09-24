@@ -3,19 +3,21 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- [[ Tree ]]
-  use {                                       -- filesystem navigation
+  use {                                        -- filesystem navigation
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons' -- filesystem icons
+    requires = 'kyazdani42/nvim-web-devicons', -- filesystem icons
+    config = function()
+      require("config.nvimTree").setup()
+    end,
   }
 
   -- [[ Theme ]]
   use { 'DanilaMihailov/beacon.nvim' } -- cursor jump
   use {
     'nvim-lualine/lualine.nvim',       -- statusline
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-      opt = true
-    }
+    config = function()
+      require("config.lualine").setup()
+    end,
   }
   use { 'Mofiqul/dracula.nvim' }
   use { 'morhetz/gruvbox' }       -- colorscheme
@@ -112,6 +114,7 @@ return require('packer').startup(function(use)
   use 'junegunn/fzf.vim'                                               -- fzf
   use { 'mg979/vim-visual-multi', branch = 'master' }                  -- multiple cursors
   use { 'easymotion/vim-easymotion' }                                  -- easymotion
+  use { "chaoren/vim-wordmotion", opt = true, fn = { "<Plug>WordMotion_w" } }
   use { 'preservim/nerdcommenter' }                                    -- comment
   use { 'tpope/vim-surround' }                                         -- surround
   use { 'karb94/neoscroll.nvim' }                                      -- smooth scroll
@@ -120,7 +123,21 @@ return require('packer').startup(function(use)
     run = "bash install.sh"
   }
   use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' } -- code runner
+  use {                                                                  -- color utils
+    "max397574/colortils.nvim",
+    cmd = "Colortils",
+    config = function()
+      require("colortils").setup()
+    end,
+  }
 
+  -- Startup screen
+  use {
+    "goolord/alpha-nvim",
+    config = function()
+      require("config.alpha").setup()
+    end,
+  }
   -- [[ Trouble nvim ]]
   use {
     "folke/trouble.nvim",
@@ -133,4 +150,24 @@ return require('packer').startup(function(use)
 
   -- [[ Git ]]
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- git
+  use {
+    "TimUntersberger/neogit",
+    cmd = "Neogit",
+    module = { "neogit" },
+    config = function()
+      require("config.neogit").setup()
+    end,
+  }
+
+  -- [[ Markdown ]]
+  use {
+    "iamcco/markdown-preview.nvim",
+    opt = true,
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    ft = "markdown",
+    cmd = { "MarkdownPreview" },
+    requires = { "zhaozg/vim-diagram", "aklt/plantuml-syntax" },
+  }
 end)

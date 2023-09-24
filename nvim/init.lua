@@ -13,22 +13,22 @@ require('keys')        -- Keymaps
 require('plug')        -- Plugins
 require('diagnostics') -- Diagnostics
 
--- [[ PLUGINS CONFIGS ]]
-require('plugins.lsp')            -- Language Servers
-require('plugins.mason')          -- LSP Install
-require('plugins.cmp')            -- Autocompletion
-require('plugins.ts')             -- Treesiter
-require('plugins.nvimTree')       -- Filesystem navigation
-require('plugins.lualine')        -- Status Line
-require('plugins.barbecue')       -- Breadcrumbs
-require('plugins.autopairs')      -- Autopairs
-require('plugins.cursorline')     -- Cursorline, Highlight words and lines on the cursor for Neovim
-require('plugins.barbar.config')  -- Bufferline Config
-require('plugins.barbar.keymaps') -- Bufferline Keymaps
-require('plugins.toggleterm')     -- Terminal
-require('plugins.telescope')      -- Telescope
-require('plugins.neoscroll')      -- Neoscroll, smooth scrolling
-require('plugins.gitsigns')       -- Gitsigns
-require('plugins.codeRunner')     -- Code Runner
-require('plugins.lspsaga')        -- LSP Saga
-require('plugins.hlchunk')        -- Highlight current chunk
+-- [[ PLUGINS CONFIG ]]
+require('config.lsp')   -- Language Servers
+require('config.mason') -- LSP Install
+require('config.cmp')   -- Autocompletion
+require('config.ts')    -- Treesiter
+--require('config.nvimTree')       -- Filesystem navigation
+--require('config.lualine')        -- Status Line
+require('config.barbecue')       -- Breadcrumbs
+require('config.autopairs')      -- Autopairs
+require('config.cursorline')     -- Cursorline, Highlight words and lines on the cursor for Neovim
+--require('config.barbar.config')  -- Bufferline Config
+require('config.barbar.keymaps') -- Bufferline Keymaps
+require('config.toggleterm')     -- Terminal
+require('config.telescope')      -- Telescope
+require('config.neoscroll')      -- Neoscroll, smooth scrolling
+require('config.gitsigns')       -- Gitsigns
+require('config.codeRunner')     -- Code Runner
+require('config.lspsaga')        -- LSP Saga
+require('config.hlchunk')        -- Highlight current chunk
