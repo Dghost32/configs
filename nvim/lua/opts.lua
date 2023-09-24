@@ -14,9 +14,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   desc = "undercurl warnings"
 })
 
--- open alpha
-vim.api.nvim_create_autocmd({ "VimEnter" }, { command = [[hi Normal ctermbg=none]], desc = "open alpha" })
-
 --transparent background
 --vim.api.nvim_create_autocmd('ColorScheme', {
 --command = [[highlight Normal guibg=NONE ctermbg=NONE]],

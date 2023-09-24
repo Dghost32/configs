@@ -17,7 +17,7 @@ function M.setup()
   dashboard.section.buttons.val = {
     dashboard.button("e", " New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("c", " Configuration", ":e $MYVIMRC <CR>"),
-    dashboard.button("t", "󰐅 Open tree explorer", ":NvimTreeToggle <CR>"),
+    dashboard.button("t", "󰐅 Open tree explorer", ":NvimTreeToggle<CR>"),
     dashboard.button("f", "󰈞 Find file", ":Telescope find_files <CR>"),
     dashboard.button("h", "󰎧 Recently opened files", ":Telescope oldfiles <CR>"),
     dashboard.button("p", "󰕾 Find word", ":Telescope live_grep <CR>"),

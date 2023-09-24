@@ -105,6 +105,14 @@ return require('packer').startup(function(use)
   -- [[ Terminal ]]
   use { "akinsho/toggleterm.nvim", tag = '*' }
 
+  -- [[ Todo ]]
+  use {
+    "folke/todo-comments.nvim",
+    config = function()
+      require("config.todocomments").setup()
+    end,
+  }
+
   -- [[ UltiSnips ]]
   use { 'SirVer/ultisnips' }   -- snippets
   use { 'honza/vim-snippets' } -- snippets
@@ -146,6 +154,16 @@ return require('packer').startup(function(use)
       require("trouble").setup {
       }
     end
+  }
+
+  -- [[ Notification ]]
+  use {
+    "rcarriga/nvim-notify",
+    event = "BufReadPre",
+    config = function()
+      require("config.notify").setup()
+    end,
+    disable = false,
   }
 
   -- [[ Git ]]
