@@ -2,6 +2,14 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Startup screen
+  use {
+    "goolord/alpha-nvim",
+    config = function()
+      require("config.alpha").setup()
+    end,
+  }
+
   -- [[ Tree ]]
   use {                                        -- filesystem navigation
     'kyazdani42/nvim-tree.lua',
@@ -11,19 +19,19 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- [[ Theme ]]
-  use { 'DanilaMihailov/beacon.nvim' } -- cursor jump
+  -- [[ STATUSLINE ]]
   use {
-    'nvim-lualine/lualine.nvim',       -- statusline
+    'nvim-lualine/lualine.nvim',
     config = function()
       require("config.lualine").setup()
     end,
   }
-  use { 'Mofiqul/dracula.nvim' }
-  use { 'morhetz/gruvbox' }       -- colorscheme
-  use { 'catppuccin/nvim' }       -- colorscheme
-  use { "lunarvim/lunar.nvim" }   -- colorscheme
-  use { "folke/tokyonight.nvim" } -- colorscheme
+
+  -- [[ Theme ]]
+  use { 'catppuccin/nvim' }
+  use { "lunarvim/lunar.nvim" }
+  use { "folke/tokyonight.nvim" }
+  use { 'oxfist/night-owl.nvim' }
 
   -- [[ Copilot ]]
   use { 'github/copilot.vim' } -- copilot
@@ -69,9 +77,10 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip' },             -- Required
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
-  }
-  use { 'onsails/lspkind.nvim' } -- lsp icons
-  use { "glepnir/lspsaga.nvim" } -- lsp saga
+  }                                       -- end of lspzero
+
+  use { 'onsails/lspkind.nvim' }          -- lsp icons
+  use { 'glepnir/lspsaga.nvim' }          -- lsp saga
 
   -- [[ Treesitter ]]
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlighting
@@ -80,8 +89,6 @@ return require('packer').startup(function(use)
   use({
     "utilyre/barbecue.nvim",
   })
-
-  use { 'SmiteshP/nvim-navic' } -- breadcrumbs
 
   -- [[ TELESCOPE ]]
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
@@ -118,6 +125,7 @@ return require('packer').startup(function(use)
   use { 'honza/vim-snippets' } -- snippets
 
   -- [[ IDE ]]
+  use { 'SmiteshP/nvim-navic' }                                        -- breadcrumbs
   use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end } -- fzf
   use 'junegunn/fzf.vim'                                               -- fzf
   use { 'mg979/vim-visual-multi', branch = 'master' }                  -- multiple cursors
@@ -139,13 +147,7 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- Startup screen
-  use {
-    "goolord/alpha-nvim",
-    config = function()
-      require("config.alpha").setup()
-    end,
-  }
+
   -- [[ Trouble nvim ]]
   use {
     "folke/trouble.nvim",
@@ -154,16 +156,6 @@ return require('packer').startup(function(use)
       require("trouble").setup {
       }
     end
-  }
-
-  -- [[ Notification ]]
-  use {
-    "rcarriga/nvim-notify",
-    event = "BufReadPre",
-    config = function()
-      require("config.notify").setup()
-    end,
-    disable = false,
   }
 
   -- [[ Git ]]

@@ -76,7 +76,6 @@ plugins=(
   yarn
   tmux
   ag
-  thefuck
   themes
   web-search
   copyfile
@@ -183,6 +182,12 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/bin/java
 #source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#
+#VIRTUAL ENV VARS
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+source ~/.local/bin/virtualenvwrapper.sh
 
 # bun completions
 [ -s "/home/carlos/.bun/_bun" ] && source "/home/carlos/.bun/_bun"
@@ -194,3 +199,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval $(thefuck --alias)

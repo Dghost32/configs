@@ -21,7 +21,6 @@ function M.setup()
       FIX = { icon = icons.ui.Bug, color = error_red },
       TODO = { icon = icons.ui.Check, color = hint_blue },
       HACK = { icon = icons.ui.Fire, color = warning_orange },
-      WARN = { icon = icons.diagnostics.Warning, color = warning_orange },
       PERF = { icon = icons.ui.Dashboard, color = perf_purple },
       NOTE = { icon = icons.ui.Note, color = lime_green },
     },

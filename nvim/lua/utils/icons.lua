@@ -27,13 +27,6 @@ return {
     Table = "",
     Telescope = "",
   },
-  diagnostics = {
-    Error = "",
-    Hint = "",
-    Information = "󰋼",
-    Question = "",
-    Warning = "",
-  },
   lsp = {
     server_installed = "✓",
     server_pending = "➜",

@@ -4,15 +4,7 @@ local icons = require "utils.icons"
 
 function M.setup()
   local notify = require "notify"
-  notify.setup {
-    icons = {
-      ERROR = icons.diagnostics.Error,
-      WARN = icons.diagnostics.Warning,
-      INFO = icons.diagnostics.Information,
-      DEBUG = icons.ui.Bug,
-      TRACE = icons.ui.Pencil,
-    },
-  }
+  notify.setup {};
   vim.notify = notify
 end
 

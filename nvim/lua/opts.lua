@@ -28,10 +28,11 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 -- [[ Context ]]
-opt.number = true          -- bool: Show line numbers
-opt.numberwidth = 1        -- num:  Width of line number column
-opt.relativenumber = false -- bool: Show relative line numbers
-opt.ruler = true           -- bool: Show the cursor position
+opt.number = true         -- bool: Show line numbers
+opt.numberwidth = 1       -- num:  Width of line number column
+opt.relativenumber = true -- bool: Show relative line numbers
+opt.ruler = true          -- bool: Show the cursor position
+opt.signcolumn = "yes"    -- str:  Show the sign column
 
 -- [[ Copy ]]
 opt.clipboard = 'unnamedplus' -- str:  Clipboard to use
