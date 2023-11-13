@@ -14,12 +14,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   desc = "undercurl warnings"
 })
 
---transparent background
---vim.api.nvim_create_autocmd('ColorScheme', {
---command = [[highlight Normal guibg=NONE ctermbg=NONE]],
---desc = "transparent background"
---})
-
 -- show diagnostics menu on cursor hold
 vim.api.nvim_create_autocmd("CursorHold", {
   command =
