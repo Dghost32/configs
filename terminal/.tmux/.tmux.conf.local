@@ -1,7 +1,7 @@
 # -- windows & pane creation ---------------------------------------------------
 
 # new window retains current path, possible values are:
-tmux_conf_new_window_retain_current_path=false
+tmux_conf_new_window_retain_current_path=true
 
 # new pane retains current path, possible values are:
 tmux_conf_new_pane_retain_current_path=true
@@ -12,7 +12,6 @@ tmux_conf_new_pane_reconnect_ssh=false
 # prompt for session name when creating a new session, possible values are:
 tmux_conf_new_session_prompt=false
 
-
 set -g @catppuccin_flavour 'mocha'
 
 set -g @plugin 'tmux-plugins/tpm'
@@ -20,7 +19,14 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'dreamsofcode-io/catppuccin-tmux'
 set -g @plugin 'tmux-plugins/tmux-yank'
-#set -g @plugin 'erikw/tmux-powerline'
 set -g @plugin 'Neo-Oli/tmux-text-macros'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-sessionist'
+set -g @treemux-tree-nvim-init-file '~/.tmux/plugins/treemux/configs/treemux_init.lua'
+set -g @plugin 'kiyoon/treemux'
 
 run '~/.tmux/plugins/tpm/tpm'
+
+set -g status off
