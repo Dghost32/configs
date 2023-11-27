@@ -8,10 +8,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# default: nanotech
-# jaischeema
-# macovsky-ruby (basic)
-# fletcherm
 ZSH_THEME="nanotech"
 # Enable to have random theme each time
 #ZSH_THEME=random
@@ -180,7 +176,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/usr/bin/java
+export JAVA_HOME=/usr/lib/jvm/bellsoft-java21-amd64
 #source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 #VIRTUAL ENV VARS
