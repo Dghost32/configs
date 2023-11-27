@@ -146,6 +146,7 @@ return require('packer').startup(function(use)
       require("colortils").setup()
     end,
   }
+  use { "sbdchd/neoformat" }
 
 
   -- [[ Trouble nvim ]]

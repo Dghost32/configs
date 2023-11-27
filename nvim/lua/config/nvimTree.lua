@@ -2,7 +2,31 @@ local M = {}
 
 function M.setup()
   local nvim_tree = require "nvim-tree"
-  nvim_tree.setup({})
+  nvim_tree.setup({
+    update_cwd = true,
+    git = {
+      enable = true,
+    },
+    actions = {
+      open_file = {
+        resize_window = true,
+      },
+    },
+    view = {
+      side = "left",
+    },
+    update_focused_file = {
+      enable = true,
+      update_cwd = true,
+    },
+    filters = {
+      dotfiles = false,
+      git_ignored = false
+    },
+    diagnostics = {
+      enable = true,
+    },
+  })
 end
 
 local function open_tree()
