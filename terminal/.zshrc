@@ -198,3 +198,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval $(thefuck --alias)
+
+source <(kubectl completion zsh)
