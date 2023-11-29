@@ -96,6 +96,9 @@ map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 map('n', 'J', 'mzJ`z')
 
+-- [[ Select all ]]
+map('n', '<C-a>', 'ggVG')
+
 -- [[ Better indenting ]]
 map('v', '<', '<gv')
 map('v', '>', '>gv')
