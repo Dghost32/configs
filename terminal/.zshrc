@@ -117,6 +117,10 @@ alias sr="sudo reboot"
 alias job="cd ~/Job"
 alias un="cd ~/Unal"
 
+# tmux 
+alias tmux-save="~/configs/terminal/scripts/tmux-session.sh save"
+alias tmux-restore="~/configs/terminal/scripts/tmux-session.sh restore"
+
 # NVM configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
@@ -156,7 +160,7 @@ function openNvim {
 }
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  exec tmux -l new -t default_session
 fi
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
