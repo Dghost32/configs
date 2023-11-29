@@ -82,6 +82,14 @@ return require('packer').startup(function(use)
   use { 'onsails/lspkind.nvim' }          -- lsp icons
   use { 'glepnir/lspsaga.nvim' }          -- lsp saga
 
+  -- [[ Better cmd && src ui ]]
+  use { 'folke/noice.nvim', requires = {
+    { 'MunifTanjim/nui.nvim' },
+    { 'rcarriga/nvim-notify' }
+  }, config = function()
+    require("config.noice").setup()
+  end, }
+
   -- [[ Treesitter ]]
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlighting
 

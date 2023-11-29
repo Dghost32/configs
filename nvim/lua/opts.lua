@@ -40,9 +40,10 @@ opt.updatetime = 300 -- num:  Delay before swap file is saved [[ Copilot ]]
 -- [[ Cursor ]]
 opt.cursorline = true         -- bool: Highlight the current line
 opt.cursorcolumn = false      -- bool: Highlight the current column
-opt.lazyredraw = true         -- bool: Don't redraw while executing macros
+opt.lazyredraw = false        -- bool: Don't redraw while executing macros
 opt.mouse = 'a'               -- str:  Mouse mode
 opt.whichwrap:append "<>[]hl" -- str:  Characters to wrap around
+opt.cmdheight = 0             -- num:  Height of the command bar
 
 -- [[ Filetypes ]]
 opt.encoding = 'utf8'     -- str:  String encoding to use
