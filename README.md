@@ -1,4 +1,4 @@
-# Config
+# Dotfiles
 
 Some of my config files
 
@@ -6,16 +6,24 @@ Some of my config files
 
 Create symbolic links in ~ for
 
--   .zshrc -> configs/.zshrc
--   .vim -> configs/.vim
--   .vimrc -> configs/.vimrc
--   .tmux.conf -> configs/.tmux.conf
--   .gitconfig -> configs/.gitconfig
+For Zsh, create the following symbolic links
+-   ~/.zshrc -> configs/.zshrc
 
-For NeoVim, create symbolic links in .configs/nvim for
+For Tmux, create the following symbolic links
+-   ~/.tmux.conf -> configs/terminal/.tmux/.tmux.conf
+-   ~/.tmux.conf.local -> configs/terminal/.tmux/.tmux.conf.local
 
--   coc-settings.json -> configs/coc-settings.json
--   init.vim -> configs/.vimrc
+For Git, create the following symbolic links
+-   ~/.gitconfig -> configs/git/.gitconfig
+-   ~/.gitignore -> configs/git/.gitignore
+
+For NeoVim, create the following symbolic links
+
+-   ~/.config/nvim/init.lua -> configs/nvim/init.lua
+-   ~/.config/nvim/lua -> configs/nvim/lua
+
+For WezTerm, create the following symbolic links
+-   ~/.wezterm.lua -> configs/terminal/wezterm/.wezterm.lua
 
 ### How to create a symbolic link
 
