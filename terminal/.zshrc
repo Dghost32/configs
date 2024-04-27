@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="nanotech"
+ZSH_THEME="edvardm"
 # Enable to have random theme each time
 #ZSH_THEME=random
 
@@ -160,7 +160,7 @@ function openNvim {
 }
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux -l new -t default_session
+  exec tmux -l new -t wez
 fi
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
@@ -180,6 +180,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/bellsoft-java21-amd64
 #source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
@@ -204,3 +205,11 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval $(thefuck --alias)
 
 source <(kubectl completion zsh)
+eval "$(zoxide init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/carlos/Apps/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/home/carlos/Apps/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/carlos/Apps/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/carlos/Apps/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+eval "$(gh copilot alias -- zsh)"

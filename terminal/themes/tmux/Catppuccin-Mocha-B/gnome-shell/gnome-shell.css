@@ -2374,7 +2374,7 @@ StEntry StLabel.hint-text,
 
 /* Top Bar */
 #panel {
-  background-color: rgba(30, 30, 46, 0.95);
+  background-color: rgba(30, 30, 46, 0.5);
   height: 32px;
   color: #f5e0dc;
   font-feature-settings: 'tnum';

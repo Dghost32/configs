@@ -10,10 +10,10 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'Tokyo Night'
-config.window_background_opacity = 0.9
+config.color_scheme = 'Catppuccin Mocha (Gogh)'
+config.window_background_opacity = 0.875
 
-config.enable_tab_bar = false
+config.enable_tab_bar = false 
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font = wezterm.font {
@@ -21,7 +21,6 @@ config.font = wezterm.font {
   -- NOTE: Font Ligatures are enabled => === !== <= <== >= ==> != ++ -- -> => <=>
   harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
 }
-
 
 config.font_size = 10.5
 

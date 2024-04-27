@@ -1,19 +1,19 @@
-require 'nvim-treesitter.configs'.setup {
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+local M = {}
 
-  -- Automatically install missing parsers when entering buffer
-  auto_install = false,
+function M.setup()
+  local tsconfig = require 'nvim-treesitter.configs'
 
-  -- autotag
-  autotag = {
-    enable = true,
-  },
+  tsconfig.setup {
+    sync_install = false,
+    auto_install = false,
+    autotag = {
+      enable = true,
+    },
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
+    },
+  }
+end
 
-  highlight = {
-    enable = true,
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    additional_vim_regex_highlighting = false,
-  },
-}
+return M

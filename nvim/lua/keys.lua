@@ -115,3 +115,7 @@ map('n', '<leader>e', ':NvimTreeFocus<CR>')     -- find file in nvim tree
 -- [[ Window navigation ]]
 map('n', '<C-h>', '<C-w>h', { silent = true })
 map('n', '<C-l>', '<C-w>l', { silent = true })
+
+-- [[ format ]]
+map('n', '<leader>z', ':LspZeroFormat<CR>')
+map('n', '<leader>g', ':Neoformat<CR>')

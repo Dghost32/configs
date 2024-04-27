@@ -1,6 +1,6 @@
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
-local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+require("cmp_nvim_ultisnips.mappings")
 
 cmp.setup({
   snippet = {

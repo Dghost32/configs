@@ -2,114 +2,90 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Startup screen
-  use {
+  use 'lervag/vimtex' --LaTex
+
+  use {               -- [[ Startup screen ]]
     "goolord/alpha-nvim",
     config = function()
       require("config.alpha").setup()
     end,
   }
 
-  -- [[ Tree ]]
-  use {                                        -- filesystem navigation
+  use { -- [[ Tree ]]
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons', -- filesystem icons
+    requires = 'kyazdani42/nvim-web-devicons',
     config = function()
       require("config.nvimTree").setup()
     end,
   }
 
-  -- [[ STATUSLINE ]]
-  use {
+  use { -- [[ STATUSLINE - bottom ]]
     'nvim-lualine/lualine.nvim',
     config = function()
       require("config.lualine").setup()
     end,
   }
 
-  -- [[ Theme ]]
+  -- [[ Themes ]]
   use { 'catppuccin/nvim' }
   use { "lunarvim/lunar.nvim" }
   use { "folke/tokyonight.nvim" }
   use { 'oxfist/night-owl.nvim' }
 
-  -- [[ Copilot ]]
-  use { 'github/copilot.vim' } -- copilot
-
-  -- [[ LSP ]]
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+  use { -- [[ Better cmd && src ui ]]
+    'folke/noice.nvim',
     requires = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {
-        -- Optional
-        'williamboman/mason.nvim',
-        run = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' }, -- Required
-      {
-        "hrsh7th/nvim-cmp",
-        requires = {
-          "quangnguyen30192/cmp-nvim-ultisnips",
-          config = function()
-            -- optional call to setup (see customization section)
-            require("cmp_nvim_ultisnips").setup {}
-          end,
-          -- If you want to enable filetype detection based on treesitter:
-          -- requires = { "nvim-treesitter/nvim-treesitter" },
-        },
-      },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'quangnguyen30192/cmp-nvim-ultisnips' },
-
-      -- Snippets
-      { 'L3MON4D3/LuaSnip' },             -- Required
-      { 'rafamadriz/friendly-snippets' }, -- Optional
-    }
-  }                                       -- end of lspzero
-
-  use { 'onsails/lspkind.nvim' }          -- lsp icons
-  use { 'glepnir/lspsaga.nvim' }          -- lsp saga
-
-  -- [[ Better cmd && src ui ]]
-  use { 'folke/noice.nvim', requires = {
-    { 'MunifTanjim/nui.nvim' },
-    { 'rcarriga/nvim-notify' }
-  }, config = function()
+      { 'MunifTanjim/nui.nvim' },
+      { 'rcarriga/nvim-notify' }
+    }, config = function()
     require("config.noice").setup()
   end, }
 
-  -- [[ Treesitter ]]
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlighting
 
-  -- [[ Breadcrumbs ]]
-  use({
+  use { -- [[ Treesitter - syntax highlighting ]]
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require("config.ts").setup()
+    end,
+  }
+
+  use({ -- [[ Breadcrumbs ]]
     "utilyre/barbecue.nvim",
+    config = function()
+      require("config.barbecue").setup()
+    end
   })
 
-  -- [[ TELESCOPE ]]
-  use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { -- [[ TELESCOPE ]]
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    },
+    config = function()
+      require("config.telescope").setup()
+    end,
+  }
 
-  -- [[ Testing ]]
-  use { 'vim-test/vim-test' } -- testing
 
-  -- [[ Autopairs ]]
-  use { 'windwp/nvim-autopairs' } -- autopairs
+  use { 'vim-test/vim-test' } -- [[ Testing ]]
 
-  -- [[ CURSORLINE ]]
-  use { 'yamatsum/nvim-cursorline' } -- Highlight words and lines on the cursor for Neovim
+
+  use { -- [[ Autopairs ]]
+    'windwp/nvim-autopairs',
+    config = function()
+      require("config.autopairs").setup()
+    end
+  }
+
+  use { -- [[ CURSORLINE  -- Highlight words and lines on the cursor for Neovim ]]
+    'yamatsum/nvim-cursorline',
+    config = function()
+      require("config.cursorline").setup()
+    end
+  }
 
   -- [[ BarBar ]]
   use { 'romgrk/barbar.nvim' } -- bufferline
@@ -118,7 +94,11 @@ return require('packer').startup(function(use)
   use { 'lukas-reineke/indent-blankline.nvim' } -- indent line
 
   -- [[ Terminal ]]
-  use { "akinsho/toggleterm.nvim", tag = '*' }
+  use { "akinsho/toggleterm.nvim", tag = '*',
+    config = function()
+      require("config.toggleterm").setup()
+    end
+  }
 
   -- [[ Todo ]]
   use {
@@ -141,13 +121,24 @@ return require('packer').startup(function(use)
   use { "chaoren/vim-wordmotion", opt = true, fn = { "<Plug>WordMotion_w" } }
   use { 'preservim/nerdcommenter' }                                    -- comment
   use { 'tpope/vim-surround' }                                         -- surround
-  use { 'karb94/neoscroll.nvim' }                                      -- smooth scroll
+  use {                                                                -- smooth scroll
+    'karb94/neoscroll.nvim',
+    config = function()
+      require("config.neoscroll").setup()
+    end,
+  }
   use {
     "michaelb/sniprun",
     run = "bash install.sh"
   }
-  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' } -- code runner
-  use {                                                                  -- color utils
+  use { -- code runner
+    'CRAG666/code_runner.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require("config.codeRunner").setup()
+    end,
+  }
+  use { -- color utils
     "max397574/colortils.nvim",
     cmd = "Colortils",
     config = function()
@@ -155,6 +146,7 @@ return require('packer').startup(function(use)
     end,
   }
   use { "sbdchd/neoformat" }
+  use { 'github/copilot.vim' } -- [[ Copilot ]]
 
 
   -- [[ Trouble nvim ]]
@@ -168,8 +160,14 @@ return require('packer').startup(function(use)
   }
 
   -- [[ Git ]]
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- git
-  use {
+  use { -- [[ gitsigns -- line diff ]]
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require("config.gitsigns").setup()
+    end,
+  }
+  use { -- [[ Neogit ]]
     "TimUntersberger/neogit",
     cmd = "Neogit",
     module = { "neogit" },
@@ -178,8 +176,8 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- [[ Markdown ]]
-  use {
+
+  use { -- [[ Markdown ]]
     "iamcco/markdown-preview.nvim",
     opt = true,
     run = function()
@@ -188,5 +186,58 @@ return require('packer').startup(function(use)
     ft = "markdown",
     cmd = { "MarkdownPreview" },
     requires = { "zhaozg/vim-diagram", "aklt/plantuml-syntax" },
+  }
+
+  -- [[ LSP ]]
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      {
+        -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+        config = function()
+          require("config.mason").setup()
+        end
+      },
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      -- Autocompletion
+      {
+        "hrsh7th/nvim-cmp",
+        requires = {
+          "quangnguyen30192/cmp-nvim-ultisnips",
+          config = function()
+            -- optional call to setup (see customization section)
+            require("cmp_nvim_ultisnips").setup {}
+          end,
+        },
+      },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lua' },
+      { 'quangnguyen30192/cmp-nvim-ultisnips' },
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },             -- Required
+      { 'rafamadriz/friendly-snippets' }, -- Optional
+    },
+    config = function()
+      require("config.lsp").setup()
+    end,
+  }                              -- end of lspzero
+
+  use { 'onsails/lspkind.nvim' } -- lsp icons
+  use {                          -- lsp saga
+    'glepnir/lspsaga.nvim',
+    config = function()
+      require("config.lspsaga").setup()
+    end,
   }
 end)

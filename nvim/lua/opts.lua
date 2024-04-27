@@ -2,25 +2,6 @@
 local opt = vim.opt -- set
 local cmd = vim.cmd -- let
 
--- this is needed to make the underline work
-vim.api.nvim_create_autocmd('ColorScheme', {
-  command = [[highlight DiagnosticUnderlineError gui=undercurl]],
-  desc = "undercurl errors"
-})
-
--- this is needed to make the underline work
-vim.api.nvim_create_autocmd('ColorScheme', {
-  command = [[highlight DiagnosticUnderlineWarn gui=undercurl]],
-  desc = "undercurl warnings"
-})
-
--- show diagnostics menu on cursor hold
-vim.api.nvim_create_autocmd("CursorHold", {
-  command =
-  'lua vim.diagnostic.open_float({win_opts = {border = "rounded", focusable = false, title = "Diagnostics", position = "bottomleft"}})',
-  desc = "show diagnostics menu on cursor hold"
-})
-
 -- [[ Context ]]
 opt.number = true         -- bool: Show line numbers
 opt.numberwidth = 1       -- num:  Width of line number column
