@@ -1,243 +1,268 @@
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  use 'lervag/vimtex' --LaTex
+return require('lazy').setup({
+  'lervag/vimtex', -- LaTex
 
-  use {               -- [[ Startup screen ]]
+  {                -- [[ Startup screen ]]
     "goolord/alpha-nvim",
     config = function()
       require("config.alpha").setup()
-    end,
-  }
+    end
+  },
 
-  use { -- [[ Tree ]]
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require("config.nvimTree").setup()
-    end,
-  }
+  'nvim-tree/nvim-web-devicons',
 
-  use { -- [[ STATUSLINE - bottom ]]
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
+
+  { -- [[ STATUSLINE - bottom ]]
     'nvim-lualine/lualine.nvim',
     config = function()
       require("config.lualine").setup()
-    end,
-  }
+    end
+  },
 
   -- [[ Themes ]]
-  use { 'catppuccin/nvim' }
-  use { "lunarvim/lunar.nvim" }
-  use { "folke/tokyonight.nvim" }
-  use { 'oxfist/night-owl.nvim' }
+  { 'catppuccin/nvim' },
+  { "lunarvim/lunar.nvim" },
+  { "folke/tokyonight.nvim" },
+  { 'oxfist/night-owl.nvim' },
+  { "ellisonleao/gruvbox.nvim", priority = 1000,  config = true, },
 
-  use { -- [[ Better cmd && src ui ]]
+  { -- [[ Better cmd && src ui ]]
     'folke/noice.nvim',
-    requires = {
-      { 'MunifTanjim/nui.nvim' },
-      { 'rcarriga/nvim-notify' }
-    }, config = function()
-    require("config.noice").setup()
-  end, }
+    dependencies = { { 'MunifTanjim/nui.nvim' }, { 'rcarriga/nvim-notify' } },
+    config = function()
+      require("config.noice").setup()
+    end
+  },
 
-
-  use { -- [[ Treesitter - syntax highlighting ]]
+  { -- [[ Treesitter - syntax highlighting ]]
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+    build = ':TSUpdate',
     config = function()
       require("config.ts").setup()
-    end,
-  }
+    end
+  },
 
-  use({ -- [[ Breadcrumbs ]]
+  { -- [[ Breadcrumbs ]]
     "utilyre/barbecue.nvim",
     config = function()
       require("config.barbecue").setup()
     end
-  })
+  },
 
-  use { -- [[ TELESCOPE ]]
+  { -- [[ TELESCOPE ]]
     'nvim-telescope/telescope.nvim',
-    requires = {
-      { 'nvim-lua/popup.nvim' },
-      { 'nvim-lua/plenary.nvim' },
-      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    },
+    dependencies = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' }, {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'make'
+    } },
     config = function()
       require("config.telescope").setup()
-    end,
-  }
+    end
+  },
 
+  { 'vim-test/vim-test' }, -- [[ Testing ]]
 
-  use { 'vim-test/vim-test' } -- [[ Testing ]]
-
-
-  use { -- [[ Autopairs ]]
+  {                        -- [[ Autopairs ]]
     'windwp/nvim-autopairs',
     config = function()
       require("config.autopairs").setup()
     end
-  }
+  },
 
-  use { -- [[ CURSORLINE  -- Highlight words and lines on the cursor for Neovim ]]
+  { -- [[ CURSORLINE  -- Highlight words and lines on the cursor for Neovim ]]
     'yamatsum/nvim-cursorline',
     config = function()
       require("config.cursorline").setup()
     end
-  }
+  },
 
   -- [[ BarBar ]]
-  use { 'romgrk/barbar.nvim' } -- bufferline
+  { 'romgrk/barbar.nvim',                 dependencies = { 'SmiteshP/nvim-navic' } }, -- bufferline
 
-  -- [[ indent line ]]
-  use { 'lukas-reineke/indent-blankline.nvim' } -- indent line
+  -- -- [[ indent line ]]
+  { 'lukas-reineke/indent-blankline.nvim' }, -- indent line
 
   -- [[ Terminal ]]
-  use { "akinsho/toggleterm.nvim", tag = '*',
+  {
+    "akinsho/toggleterm.nvim",
+    version = '*',
     config = function()
       require("config.toggleterm").setup()
     end
-  }
+  },
 
-  -- [[ Todo ]]
-  use {
+  -- -- [[ Todo ]]
+  {
     "folke/todo-comments.nvim",
     config = function()
       require("config.todocomments").setup()
-    end,
-  }
+    end
+  },
 
-  -- [[ UltiSnips ]]
-  use { 'SirVer/ultisnips' }   -- snippets
-  use { 'honza/vim-snippets' } -- snippets
+  -- -- [[ UltiSnips ]]
+  -- {'SirVer/ultisnips'}, -- snippets
+  -- {'honza/vim-snippets'}, -- snippets
 
-  -- [[ IDE ]]
-  use { 'SmiteshP/nvim-navic' }                                        -- breadcrumbs
-  use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end } -- fzf
-  use 'junegunn/fzf.vim'                                               -- fzf
-  use { 'mg979/vim-visual-multi', branch = 'master' }                  -- multiple cursors
-  use { 'easymotion/vim-easymotion' }                                  -- easymotion
-  use { "chaoren/vim-wordmotion", opt = true, fn = { "<Plug>WordMotion_w" } }
-  use { 'preservim/nerdcommenter' }                                    -- comment
-  use { 'tpope/vim-surround' }                                         -- surround
-  use {                                                                -- smooth scroll
+  -- -- [[ IDE ]]
+  { 'SmiteshP/nvim-navic' }, -- breadcrumbs
+  {
+    'junegunn/fzf',
+    build = function()
+      vim.fn['fzf#install']()
+    end
+  },
+  -- fzf
+  'junegunn/fzf.vim',
+  {
+    'mg979/vim-visual-multi',
+    branch = 'master'
+  },                               -- multiple cursors
+  { 'easymotion/vim-easymotion' }, -- easymotion
+  {
+    "chaoren/vim-wordmotion",
+    lazy = true,
+    fn = { "<Plug>WordMotion_w" }
+  },
+  -- { 'preservim/nerdcommenter' }, -- comment
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options hereby
+      toggler = {
+        line = "gcc",
+        block = "gCc",
+      }
+    },
+    lazy = false,
+  },
+  { 'tpope/vim-surround' }, -- surround
+  {                         -- smooth scroll
     'karb94/neoscroll.nvim',
     config = function()
       require("config.neoscroll").setup()
-    end,
-  }
-  use {
+    end
+  },
+  {
     "michaelb/sniprun",
-    run = "bash install.sh"
-  }
-  use { -- code runner
+    build = "bash install.sh"
+  },
+  { -- code runner
     'CRAG666/code_runner.nvim',
-    requires = 'nvim-lua/plenary.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       require("config.codeRunner").setup()
-    end,
-  }
-  use { -- color utils
+    end
+  },
+  { -- color utils
     "max397574/colortils.nvim",
     cmd = "Colortils",
     config = function()
       require("colortils").setup()
-    end,
-  }
-  use { "sbdchd/neoformat" }
-  use { 'github/copilot.vim' } -- [[ Copilot ]]
-
+    end
+  },
+  { "sbdchd/neoformat" },
+  { 'github/copilot.vim' }, -- [[ Copilot ]]
 
   -- [[ Trouble nvim ]]
-  use {
+  {
     "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
-      require("trouble").setup {
-      }
+      require("trouble").setup {}
     end
-  }
+  },
 
   -- [[ Git ]]
-  use { -- [[ gitsigns -- line diff ]]
+  { -- [[ gitsigns -- line diff ]]
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require("config.gitsigns").setup()
-    end,
-  }
-  use { -- [[ Neogit ]]
+    end
+  },
+  { -- [[ Neogit ]]
     "TimUntersberger/neogit",
     cmd = "Neogit",
     module = { "neogit" },
     config = function()
       require("config.neogit").setup()
-    end,
-  }
+    end
+  },
 
-
-  use { -- [[ Markdown ]]
+  { -- [[ Markdown ]]
     "iamcco/markdown-preview.nvim",
-    opt = true,
-    run = function()
+    lazy = true,
+    build = function()
       vim.fn["mkdp#util#install"]()
     end,
     ft = "markdown",
     cmd = { "MarkdownPreview" },
-    requires = { "zhaozg/vim-diagram", "aklt/plantuml-syntax" },
-  }
+    dependencies = { "zhaozg/vim-diagram", "aklt/plantuml-syntax" }
+  },
 
-  -- [[ LSP ]]
-  use {
+  -- -- [[ LSP ]]
+  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
-    requires = {
-      -- LSP Support
+    dependencies = {               -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
       {
         -- Optional
         'williamboman/mason.nvim',
-        run = function()
+        build = function()
           pcall(vim.cmd, 'MasonUpdate')
         end,
         config = function()
           require("config.mason").setup()
         end
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
       -- Autocompletion
       {
         "hrsh7th/nvim-cmp",
-        requires = {
+        dependencies = {
           "quangnguyen30192/cmp-nvim-ultisnips",
           config = function()
             -- optional call to setup (see customization section)
             require("cmp_nvim_ultisnips").setup {}
-          end,
-        },
-      },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'quangnguyen30192/cmp-nvim-ultisnips' },
-
-      -- Snippets
-      { 'L3MON4D3/LuaSnip' },             -- Required
-      { 'rafamadriz/friendly-snippets' }, -- Optional
+          end
+        }
+      }, { 'hrsh7th/cmp-nvim-lsp' }, { 'hrsh7th/cmp-buffer' }, { 'hrsh7th/cmp-path' }, { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lua' }, { 'quangnguyen30192/cmp-nvim-ultisnips' }, -- Snippets
+      { 'L3MON4D3/LuaSnip' },                                                -- Required
+      { 'rafamadriz/friendly-snippets' }                                     -- Optional
     },
     config = function()
       require("config.lsp").setup()
-    end,
-  }                              -- end of lspzero
+    end
+  },                          -- end of lspzero
 
-  use { 'onsails/lspkind.nvim' } -- lsp icons
-  use {                          -- lsp saga
+  { 'onsails/lspkind.nvim' }, -- lsp icons
+  {                           -- lsp saga
     'glepnir/lspsaga.nvim',
     config = function()
       require("config.lspsaga").setup()
-    end,
-  }
-end)
+    end
+  },
+})

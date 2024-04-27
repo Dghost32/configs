@@ -107,10 +107,11 @@ map('v', '>', '>gv')
 map('n', ',', '$a;<esc>', { noremap = true, silent = true })
 
 -- [[ NvimTree ]]
-map('n', '<leader>nt', ':NvimTreeToggle<CR>')   -- toggle nvim tree
-map('n', '<leader>nr', ':NvimTreeRefresh<CR>')  -- refresh nvim tree
-map('n', '<leader>nf', ':NvimTreeFindFile<CR>') -- find file in nvim tree
-map('n', '<leader>e', ':NvimTreeFocus<CR>')     -- find file in nvim tree
+map('n', '<leader>nt', ':Neotree toggle<CR>') -- toggle nvim tree
+map('n', '<leader>nr', ':Neotree refresh<CR>') -- refresh nvim tree
+map('n', '<leader>nf', ':Neotree reveal<CR>') -- find file in nvim tree
+map('n', '<leader>e', ':Neotree focus<CR>') -- find file in nvim tree
+
 
 -- [[ Window navigation ]]
 map('n', '<C-h>', '<C-w>h', { silent = true })
