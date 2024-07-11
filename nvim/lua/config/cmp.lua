@@ -1,6 +1,5 @@
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
-require("cmp_nvim_ultisnips.mappings")
 
 cmp.setup({
   snippet = {
@@ -36,7 +35,7 @@ cmp.setup({
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         buffer = "[Buffer]",
-        ultisnips = "[UltiSnips]",
+        -- ultisnips = "[UltiSnips]",
         luasnip = "[LuaSnip]",
       })[entry.source.name]
       return vim_item

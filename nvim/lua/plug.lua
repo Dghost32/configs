@@ -46,7 +46,7 @@ return require('lazy').setup({
   { "lunarvim/lunar.nvim" },
   { "folke/tokyonight.nvim" },
   { 'oxfist/night-owl.nvim' },
-  { "ellisonleao/gruvbox.nvim", priority = 1000,  config = true, },
+  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, },
 
   { -- [[ Better cmd && src ui ]]
     'folke/noice.nvim',
@@ -73,16 +73,23 @@ return require('lazy').setup({
 
   { -- [[ TELESCOPE ]]
     'nvim-telescope/telescope.nvim',
-    dependencies = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' }, {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make'
-    } },
+    dependencies = {
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' } },
     config = function()
       require("config.telescope").setup()
     end
   },
 
   { 'vim-test/vim-test' }, -- [[ Testing ]]
+
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require("config.nvim-ts-autotag").setup()
+    end
+  },
 
   {                        -- [[ Autopairs ]]
     'windwp/nvim-autopairs',
@@ -241,17 +248,21 @@ return require('lazy').setup({
       -- Autocompletion
       {
         "hrsh7th/nvim-cmp",
-        dependencies = {
-          "quangnguyen30192/cmp-nvim-ultisnips",
-          config = function()
-            -- optional call to setup (see customization section)
-            require("cmp_nvim_ultisnips").setup {}
-          end
-        }
-      }, { 'hrsh7th/cmp-nvim-lsp' }, { 'hrsh7th/cmp-buffer' }, { 'hrsh7th/cmp-path' }, { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lua' }, { 'quangnguyen30192/cmp-nvim-ultisnips' }, -- Snippets
-      { 'L3MON4D3/LuaSnip' },                                                -- Required
-      { 'rafamadriz/friendly-snippets' }                                     -- Optional
+        -- dependencies = {
+        --   "quangnguyen30192/cmp-nvim-ultisnips",
+        --   config = function()
+        --     -- optional call to setup (see customization section)
+        --     -- require("cmp_nvim_ultisnips").setup {}
+        --   end
+        -- }
+      },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lua' },        -- Snippets
+      { 'L3MON4D3/LuaSnip' },            -- Required
+      { 'rafamadriz/friendly-snippets' } -- Optional
     },
     config = function()
       require("config.lsp").setup()

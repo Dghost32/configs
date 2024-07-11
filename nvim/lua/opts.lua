@@ -10,7 +10,7 @@ opt.ruler = true          -- bool: Show the cursor position
 opt.signcolumn = "yes"    -- str:  Show the sign column
 
 -- [[ Copy ]]
-opt.clipboard = 'unnamedplus' -- str:  Clipboard to use
+opt.clipboard = 'unnamedplus' -- str:  Use system clipboard
 
 -- [[ Commands ]]
 opt.showcmd = true -- bool: Show command in status line

@@ -33,7 +33,7 @@ map('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
 map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
 map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+-- map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 
 -- [[LSP SAGA]]
 map('n', '<leader>xn', '<cmd>Lspsaga diagnostic_jump_next<CR>')

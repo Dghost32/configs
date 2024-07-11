@@ -13,7 +13,7 @@ end
 config.color_scheme = 'Catppuccin Mocha (Gogh)'
 config.window_background_opacity = 0.875
 
-config.enable_tab_bar = false 
+config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font = wezterm.font {

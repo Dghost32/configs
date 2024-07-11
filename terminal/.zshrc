@@ -185,10 +185,10 @@ export JAVA_HOME=/usr/lib/jvm/bellsoft-java21-amd64
 #source /home/carlos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 #VIRTUAL ENV VARS
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# export WORKON_HOME=$HOME/.virtualenvs
+# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+# source ~/.local/bin/virtualenvwrapper.sh
 
 # bun completions
 [ -s "/home/carlos/.bun/_bun" ] && source "/home/carlos/.bun/_bun"
@@ -212,4 +212,6 @@ if [ -f '/home/carlos/Apps/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/hom
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/carlos/Apps/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/carlos/Apps/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
-eval "$(gh copilot alias -- zsh)"
+# eval "$(gh copilot alias -- zsh)"
+#
+alias cd="z"
