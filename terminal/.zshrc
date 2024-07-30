@@ -1,7 +1,14 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="edvardm" # random
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git
@@ -9,8 +16,8 @@ plugins=(
   zsh-autosuggestions
   yarn
   tmux
-  fzf
   ag
+  fzf-zsh-plugin
   themes
   web-search
   copyfile
@@ -36,7 +43,6 @@ function openCode {
     code $1
   fi
 }
-
 function openNvim {
   if [ $# -eq 0 ]; then
     nvim ./
@@ -63,13 +69,14 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # bun completions
 [ -s "/home/carlos/.bun/_bun" ] && source "/home/carlos/.bun/_bun"
 
-# Completition styling
+# Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-tab fzf --preview 'tree -C {} | head -200'
 
 # export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_BASE='/home/linuxbrew/.linuxbrew/bin/fzf'
 source <(fzf --zsh)
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -86,3 +93,6 @@ alias cd="z"
 # tmux 
 alias tmux-save="~/configs/terminal/scripts/tmux-session.sh save"
 alias tmux-restore="~/configs/terminal/scripts/tmux-session.sh restore"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

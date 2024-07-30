@@ -36,6 +36,7 @@ opt.termguicolors = true -- bool: If term supports ui color then enable
 opt.showmatch = true     -- bool: Show matching brackets
 opt.laststatus = 2       -- num:  Always show status line
 opt.showmode = false     -- bool: Show current mode
+opt.showtabline = 2      -- num:  Show tabline
 
 -- [[ Search ]]
 opt.hlsearch = true   -- bool: Highlight search matches

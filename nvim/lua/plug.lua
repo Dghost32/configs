@@ -45,6 +45,7 @@ return require('lazy').setup({
   { 'catppuccin/nvim' },
   { "lunarvim/lunar.nvim" },
   { "folke/tokyonight.nvim" },
+  { "EdenEast/nightfox.nvim" },
 
   { -- [[ Better cmd && src ui ]]
     'folke/noice.nvim',
