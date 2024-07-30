@@ -20,9 +20,9 @@ return require('lazy').setup({
       require("config.alpha").setup()
     end
   },
-
-  'nvim-tree/nvim-web-devicons',
-
+  { -- [[ NvimTree ]]
+    'nvim-tree/nvim-web-devicons'
+  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -45,12 +45,18 @@ return require('lazy').setup({
   { 'catppuccin/nvim' },
   { "lunarvim/lunar.nvim" },
   { "folke/tokyonight.nvim" },
-  { 'oxfist/night-owl.nvim' },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, },
 
   { -- [[ Better cmd && src ui ]]
     'folke/noice.nvim',
-    dependencies = { { 'MunifTanjim/nui.nvim' }, { 'rcarriga/nvim-notify' } },
+    dependencies = {
+      { 'MunifTanjim/nui.nvim' },
+      {
+        'rcarriga/nvim-notify',
+        config = function()
+          require("config.notify").setup()
+        end
+      }
+    },
     config = function()
       require("config.noice").setup()
     end
@@ -83,13 +89,6 @@ return require('lazy').setup({
   },
 
   { 'vim-test/vim-test' }, -- [[ Testing ]]
-
-  {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require("config.nvim-ts-autotag").setup()
-    end
-  },
 
   {                        -- [[ Autopairs ]]
     'windwp/nvim-autopairs',
@@ -140,8 +139,7 @@ return require('lazy').setup({
       vim.fn['fzf#install']()
     end
   },
-  -- fzf
-  'junegunn/fzf.vim',
+  'junegunn/fzf.vim', -- fzf
   {
     'mg979/vim-visual-multi',
     branch = 'master'
@@ -200,7 +198,6 @@ return require('lazy').setup({
       require("trouble").setup {}
     end
   },
-
   -- [[ Git ]]
   { -- [[ gitsigns -- line diff ]]
     'lewis6991/gitsigns.nvim',
@@ -210,14 +207,17 @@ return require('lazy').setup({
     end
   },
   { -- [[ Neogit ]]
-    "TimUntersberger/neogit",
-    cmd = "Neogit",
-    module = { "neogit" },
-    config = function()
-      require("config.neogit").setup()
-    end
-  },
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",  -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
 
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua",              -- optional
+    },
+    config = true
+  },
   { -- [[ Markdown ]]
     "iamcco/markdown-preview.nvim",
     lazy = true,
@@ -228,9 +228,14 @@ return require('lazy').setup({
     cmd = { "MarkdownPreview" },
     dependencies = { "zhaozg/vim-diagram", "aklt/plantuml-syntax" }
   },
-
-  -- -- [[ LSP ]]
-  {
+  { 'onsails/lspkind.nvim' }, -- lsp icons
+  {                           -- [[ LSP SAGA ]]
+    'glepnir/lspsaga.nvim',
+    config = function()
+      require("config.lspsaga").setup()
+    end
+  },
+  { -- [[ LSP Zero ]]
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
     dependencies = {               -- LSP Support
@@ -246,16 +251,7 @@ return require('lazy').setup({
         end
       }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
       -- Autocompletion
-      {
-        "hrsh7th/nvim-cmp",
-        -- dependencies = {
-        --   "quangnguyen30192/cmp-nvim-ultisnips",
-        --   config = function()
-        --     -- optional call to setup (see customization section)
-        --     -- require("cmp_nvim_ultisnips").setup {}
-        --   end
-        -- }
-      },
+      { "hrsh7th/nvim-cmp" },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
@@ -267,13 +263,5 @@ return require('lazy').setup({
     config = function()
       require("config.lsp").setup()
     end
-  },                          -- end of lspzero
-
-  { 'onsails/lspkind.nvim' }, -- lsp icons
-  {                           -- lsp saga
-    'glepnir/lspsaga.nvim',
-    config = function()
-      require("config.lspsaga").setup()
-    end
-  },
+  }, -- end of lspzero
 })

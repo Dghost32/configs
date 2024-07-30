@@ -11,7 +11,7 @@ function M.setup()
       },
     },
     notify = {
-      enabled = false
+      enabled = false,
     },
   })
 end

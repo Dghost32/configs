@@ -9,7 +9,7 @@ require('opts')        -- Options
 require('autocmds')    -- Autocommands
 require('keys')        -- Keymaps
 
-require('diagnostics') -- Diagnostics
+-- require('diagnostics') -- Diagnostics
 
 -- [[ PLUGINS CONFIG ]]
 require('config.cmp')            -- Autocompletion
