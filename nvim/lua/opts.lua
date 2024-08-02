@@ -69,6 +69,14 @@ cmd('colorscheme tokyonight-night')
 -- Set recommended to false
 vim.g.coq_settings = { ["keymap.recommended"] = false }
 
+-- [[NVIMTREE]]
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
 -- Prettier format on save
 cmd("let g:prettier#autoformat = 0")
 cmd("let g:prettier#autoformat_require_pragma = 0")

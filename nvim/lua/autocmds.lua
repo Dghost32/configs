@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 --desc = "format on save"
 --})
 
--- Attach gitsigns to a buffer when it is created
 vim.api.nvim_create_autocmd('BufReadPre', {
   command = [[lua require('gitsigns').attach()]],
   desc = "attach gitsigns to a buffer when it is created"
