@@ -7,11 +7,9 @@ Some of my config files
 Create symbolic links in ~ for
 
 For Zsh, create the following symbolic links
--   ~/.zshrc -> configs/.zshrc
+-   ~/.zshrc -> configs/terminal/.zshrc
+-   ~/zshrc -> configs/terminal/zshrc
 
-For Tmux, create the following symbolic links
--   ~/.tmux.conf -> configs/terminal/.tmux/.tmux.conf
--   ~/.tmux.conf.local -> configs/terminal/.tmux/.tmux.conf.local
 
 For Git, create the following symbolic links
 -   ~/.gitconfig -> configs/git/.gitconfig
@@ -24,6 +22,10 @@ For NeoVim, create the following symbolic links
 
 For WezTerm, create the following symbolic links
 -   ~/.wezterm.lua -> configs/terminal/wezterm/.wezterm.lua
+
+For Tmux, create the following symbolic links
+-   ~/.tmux.conf -> configs/terminal/.tmux/.tmux.conf
+-   ~/.tmux.conf.local -> configs/terminal/.tmux/.tmux.conf.local
 
 ### How to create a symbolic link
 

@@ -7,10 +7,9 @@ function M.setup()
     render = "wrapped-compact",
     timeout = 1000,
     max_width = 70,
-    top_down = true,
   })
 
-  vim.notify = notify
+  -- vim.notify = notify
 end
 
 return M

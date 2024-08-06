@@ -30,3 +30,5 @@ set -g @plugin 'kiyoon/treemux'
 run '~/.tmux/plugins/tpm/tpm'
 
 set -g status off
+set -g default-terminal "screen-256color"
+set-option -ga terminal-overrides ",xterm-256color:Tc"

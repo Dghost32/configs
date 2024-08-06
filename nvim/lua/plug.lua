@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
   'lervag/vimtex', -- LaTex
 
-  {                -- [[ Startup screen ]]
+  { -- [[ Startup screen ]]
     "goolord/alpha-nvim",
     config = function()
       require("config.alpha").setup()
@@ -51,12 +51,12 @@ return require('lazy').setup({
     'folke/noice.nvim',
     dependencies = {
       { 'MunifTanjim/nui.nvim' },
-      {
-        'rcarriga/nvim-notify',
-        config = function()
-          require("config.notify").setup()
-        end
-      }
+      -- {
+      --   'rcarriga/nvim-notify',
+      --   -- config = function()
+      --   --   require("config.notify").setup()
+      --   -- end
+      -- }
     },
     config = function()
       require("config.noice").setup()
@@ -218,6 +218,20 @@ return require('lazy').setup({
       "ibhagwan/fzf-lua",              -- optional
     },
     config = true
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false, -- Recommended
+    -- ft = "markdown" -- If you decide to lazy-load anyway
+
+    dependencies = {
+      -- You will not need this if you installed the
+      -- parsers manually
+      -- Or if the parsers are in your $RUNTIMEPATH
+      "nvim-treesitter/nvim-treesitter",
+
+      "nvim-tree/nvim-web-devicons"
+    }
   },
   { -- [[ Markdown ]]
     "iamcco/markdown-preview.nvim",

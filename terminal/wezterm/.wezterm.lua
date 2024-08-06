@@ -1,4 +1,3 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
 -- This table will hold the configuration.
@@ -19,22 +18,73 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font {
   family = 'JetBrains Mono',
   -- NOTE: Font Ligatures are enabled => === !== <= <== >= ==> != ++ -- -> => <=>
-  harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
+  harfbuzz_features = { 'calt=2', 'clig=1', 'liga=1' },
 }
 
-config.font_size = 10.5
+config.font_size = 11.5
 
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 1,
+  right = 1,
+  top = 1,
+  bottom = 1,
 }
 
 config.inactive_pane_hsb = {
-  -- NOTE: these values are multipliers, applied on normal pane values
-  saturation = 0.9,
-  brightness = 0.8,
+  brightness = 0.5,
+}
+
+-- Keys
+config.disable_default_key_bindings = true
+local act = wezterm.action
+config.leader = { key = 's', mods = 'CTRL' }
+
+config.keys = {
+  { key = 'v', mods = 'CTRL',       action = act { PasteFrom = 'Clipboard' } },
+  -- [[PANE MANAGEMENT]]
+  -- Splitting
+  { key = '-', mods = 'LEADER',       action = act { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
+  { key = '_', mods = 'LEADER|SHIFT', action = act { SplitVertical = { domain = "CurrentPaneDomain" } } },
+  -- Navigation
+  { key = 'h', mods = 'LEADER',       action = act { ActivatePaneDirection = 'Left' } },
+  { key = 'j', mods = 'LEADER',       action = act { ActivatePaneDirection = 'Down' } },
+  { key = 'k', mods = 'LEADER',       action = act { ActivatePaneDirection = 'Up' } },
+  { key = 'l', mods = 'LEADER',       action = act { ActivatePaneDirection = 'Right' } },
+  -- Resizing { key = 'H', mods = 'ALT',          action = act.AdjustPaneSize { 'Left', 2 } },
+  { key = 'J', mods = 'ALT',          action = act.AdjustPaneSize { 'Down', 2 } },
+  { key = 'K', mods = 'ALT',          action = act.AdjustPaneSize { 'Up', 2 } },
+  { key = 'L', mods = 'ALT',          action = act.AdjustPaneSize { 'Right', 2 } },
+  -- Closing
+  { key = 'x', mods = 'LEADER',       action = act.CloseCurrentPane { confirm = true } },
+  -- Zooming
+  { key = 'z', mods = 'LEADER',       action = act.TogglePaneZoomState },
+  {
+    key = 's',
+    mods = 'LEADER',
+    action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
+  },
+  -- create workspace
+  {
+    key = 'c',
+    mods = 'LEADER',
+    action = act.PromptInputLine {
+      description = wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = 'Fuchsia' } },
+        { Text = 'Enter name for new workspace' },
+      },
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          window:perform_action(
+            act.SwitchToWorkspace {
+              name = line,
+            },
+            pane
+          )
+        end
+      end),
+    },
+  },
 }
 
 config.automatically_reload_config = true
