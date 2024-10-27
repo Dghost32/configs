@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
   'lervag/vimtex', -- LaTex
 
-  { -- [[ Startup screen ]]
+  {                -- [[ Startup screen ]]
     "goolord/alpha-nvim",
     config = function()
       require("config.alpha").setup()
@@ -75,6 +75,13 @@ return require('lazy').setup({
     "utilyre/barbecue.nvim",
     config = function()
       require("config.barbecue").setup()
+    end
+  },
+
+  { -- [[ HTML AND JSX Autotag ]]
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require('nvim-ts-autotag').setup()
     end
   },
 

@@ -40,7 +40,8 @@ local act = wezterm.action
 config.leader = { key = 's', mods = 'CTRL' }
 
 config.keys = {
-  { key = 'v', mods = 'CTRL',       action = act { PasteFrom = 'Clipboard' } },
+  { key = 'V', mods = 'CTRL|SHIFT',       action = act { PasteFrom = 'Clipboard' } },
+  { key = 'C', mods = 'CTRL|SHIFT',       action = act { CopyTo = 'Clipboard' } },
   -- [[PANE MANAGEMENT]]
   -- Splitting
   { key = '-', mods = 'LEADER',       action = act { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
