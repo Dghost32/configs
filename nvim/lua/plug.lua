@@ -42,9 +42,24 @@ return require('lazy').setup({
   },
 
   -- [[ Themes ]]
-  { 'catppuccin/nvim' },
+  {
+    'catppuccin/nvim',
+    config = function()
+      require("config.catppuccin").setup()
+    end
+  },
   { "lunarvim/lunar.nvim" },
-  { "folke/tokyonight.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      }
+    },
+  },
+  { "catppuccin/nvim" },
   { "EdenEast/nightfox.nvim" },
 
   { -- [[ Better cmd && src ui ]]
@@ -255,6 +270,15 @@ return require('lazy').setup({
     'glepnir/lspsaga.nvim',
     config = function()
       require("config.lspsaga").setup()
+    end
+  },
+  {
+    "giusgad/pets.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+    config = function()
+      require("pets").setup({
+        row = 1,
+      })
     end
   },
   { -- [[ LSP Zero ]]

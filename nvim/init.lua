@@ -15,3 +15,7 @@ require('keys')        -- Keymaps
 require('config.cmp')            -- Autocompletion
 require('config.barbar.keymaps') -- Bufferline Keymaps
 require('config.hlchunk')        -- Highlight current chunk
+--
+-- vim.g.tokyonight_dark_float = false
+-- vim.api.nvim_set_hl(0,"TelescopeNormal",{bg="none"})
+-- vim.api.nvim_set_hl(0,"TelescopeSelection",{bg="none"})

@@ -1,6 +1,7 @@
 --[[ opts.lua ]]
 local opt = vim.opt -- set
 local cmd = vim.cmd -- let
+local g = vim.g     -- global
 
 -- [[ Context ]]
 opt.number = true         -- bool: Show line numbers

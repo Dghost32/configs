@@ -55,6 +55,7 @@ config.keys = {
   { key = 'J', mods = 'ALT',          action = act.AdjustPaneSize { 'Down', 2 } },
   { key = 'K', mods = 'ALT',          action = act.AdjustPaneSize { 'Up', 2 } },
   { key = 'L', mods = 'ALT',          action = act.AdjustPaneSize { 'Right', 2 } },
+  { key = 'H', mods = 'ALT',          action = act.AdjustPaneSize { 'Left', 2 } },
   -- Closing
   { key = 'x', mods = 'LEADER',       action = act.CloseCurrentPane { confirm = true } },
   -- Zooming
