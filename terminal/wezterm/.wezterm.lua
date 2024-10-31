@@ -15,13 +15,14 @@ config.window_background_opacity = 0.875
 config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
+-- NOTE: Font Ligatures are enabled => === !== <= <== >= ==> != ++ -- -> => <=>
 config.font = wezterm.font {
   family = 'JetBrains Mono',
-  -- NOTE: Font Ligatures are enabled => === !== <= <== >= ==> != ++ -- -> => <=>
   harfbuzz_features = { 'calt=2', 'clig=1', 'liga=1' },
 }
 
 config.font_size = 11.5
+config.warn_about_missing_glyphs = false
 
 config.window_padding = {
   left = 1,

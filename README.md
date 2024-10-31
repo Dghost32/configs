@@ -2,6 +2,41 @@
 
 Some of my config files
 
+## Intallation
+From a clean ubuntu install, follow the steps below
+
+### 1. Install the following packages
+- git
+- brew
+- zoxide
+- ag
+- neofetch
+- flatpak
+- thefuck
+- ripgrep
+- nodejs
+
+### Alias python3 -> python
+
+```bash
+ln -s $(which python3) ~/.local/bin/python
+```
+
+### 2. Create aliases for zsh
+-   ~/.zshrc -> configs/terminal/.zshrc
+-   ~/zshrc -> configs/terminal/zshrc
+
+### 3. Install zsh and make it the default shell
+
+### 4. Follow the instructions given by .zshrc
+
+### 5. Create aliases for wezterm
+-   ~/.wezterm.lua -> configs/terminal/wezterm/.wezterm.lua
+
+### 6. Install wezterm
+
+### 7. Theme Grub with https://github.com/catppuccin/grub
+
 ## Usage
 
 Create symbolic links in ~ for
