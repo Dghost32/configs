@@ -1,0 +1,55 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "toggle_relative_line_numbers": true,
+    "use_multiline_find": true
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "ui_font_family": "JetBrainsMono NF",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha"
+  },
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#1e1e2eE6", // Slightly darker Mantle with 90% opacity
+    "panel.background": "#00000000",
+    "editor.background": "#00000000",
+    "tab_bar.background": "#00000000",
+    "terminal.background": "#00000000",
+    "toolbar.background": "#00000000",
+    "tab.inactive_background": "#00000000",
+    "tab.active_background": "#2b2b3aE6", // Slightly darker Surface 0 with 90% opacity
+    "scrollbar.track.border": "#00000000",
+    "scrollbar.thumb.border": "#00000000",
+    "elevated_surface.background": "#2e2e3eE6", // Slightly darker Base with 90% opacity
+    "surface.background": "#2e2e3eE6", // Slightly darker Base with 90% opacity
+    "editor.gutter.background": "#00000000",
+    "editor.indent_guide": "#b4befe40", // Lavender with less brightness
+    "editor.indent_guide_active": "#cba6f770", // Mauve with less brightness
+    "editor.line_number": "#89b4fa90", // Blue with less brightness
+    "editor.active_line.background": "#45475a40" // Surface 1 with less brightness
+  }
+}
