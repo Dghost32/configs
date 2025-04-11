@@ -1,11 +1,17 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [ -f ~/.myenvs ] && source ~/.myenvs
 
+# eval "$(thefuck --alias)"
+eval "$(fzf --zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(zoxide init zsh)"
+
 # [[ ENVARS ]]
 # ANDROID
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 #MAVEN
 M2_HOME='/opt/apache-maven-3.9.9'
 PATH="$M2_HOME/bin:$PATH"
@@ -22,8 +28,3 @@ export PATH=$PATH:$HOME/.local/bin
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # [ -s "/home/carlos/.bun/_bun" ] && source "/home/carlos/.bun/_bun" # Load bun
-
-# eval "$(thefuck --alias)"
-eval "$(zoxide init zsh)"
-eval "$(fzf --zsh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -11,10 +11,11 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
+  "show_completions_on_input": true,
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
