@@ -9,10 +9,13 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'Catppuccin Mocha (Gogh)'
-config.window_background_opacity = 0.875
+-- config.color_scheme = 'Catppuccin Mocha (Gogh)'
+config.window_background_opacity = 0.6
 
-config.enable_tab_bar = false
+-- Enable wayland support
+config.enable_wayland = false
+
+config.enable_tab_bar = true 
 config.hide_tab_bar_if_only_one_tab = true
 
 -- NOTE: Font Ligatures are enabled => === !== <= <== >= ==> != ++ -- -> => <=>

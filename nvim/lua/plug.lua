@@ -21,6 +21,12 @@ return require('lazy').setup({
     end
   },
   {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
+  {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
       { "github/copilot.vim" },                       -- or zbirenbaum/copilot.lua
@@ -215,6 +221,14 @@ return require('lazy').setup({
     config = function()
       require("config.neoscroll").setup()
     end
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
   {
     "michaelb/sniprun",

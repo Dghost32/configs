@@ -12,6 +12,7 @@
 	defaultBranch = main
 [core]
 	excludesFile = /home/carlos/configs/gitignore/Vim.gitignore
+	pager = less -FX
 [alias]
 	track-all-branches = "!git fetch -p && for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done; git branch -a"
 	cob = checkout -b
