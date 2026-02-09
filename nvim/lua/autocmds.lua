@@ -1,20 +1,21 @@
-vim.api.nvim_create_autocmd('ColorScheme', {
+--[[ autocmds.lua ]]
+
+-- Undercurl for diagnostics
+vim.api.nvim_create_autocmd("ColorScheme", {
   command = [[highlight DiagnosticUnderlineError gui=undercurl]],
-  desc = "undercurl errors"
+  desc = "Undercurl errors",
 })
 
-vim.api.nvim_create_autocmd('ColorScheme', {
+vim.api.nvim_create_autocmd("ColorScheme", {
   command = [[highlight DiagnosticUnderlineWarn gui=undercurl]],
-  desc = "undercurl warnings"
+  desc = "Undercurl warnings",
 })
 
-vim.api.nvim_create_autocmd('BufReadPre', {
-  command = [[lua require('gitsigns').attach()]],
-  desc = "attach gitsigns to a buffer when it is created"
+-- Highlight on yank (from kickstart.nvim)
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank({ timeout = 300 })
+  end,
+  desc = "Highlight on yank",
 })
-
--- run LspZeroFormat on save
---vim.api.nvim_create_autocmd("BufWritePre", {
---command = 'LspZeroFormat',
---desc = "format on save"
---})

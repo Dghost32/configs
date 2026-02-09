@@ -1,3 +1,0 @@
-require("lspinstall").setup({}) -- important
-
-

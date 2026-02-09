@@ -1,83 +1,65 @@
 --[[ opts.lua ]]
-local opt = vim.opt -- set
-local cmd = vim.cmd -- let
-local g = vim.g     -- global
+local opt = vim.opt
 
 -- [[ Context ]]
-opt.number = true         -- bool: Show line numbers
-opt.numberwidth = 1       -- num:  Width of line number column
-opt.relativenumber = true -- bool: Show relative line numbers
-opt.ruler = true          -- bool: Show the cursor position
-opt.signcolumn = "yes"    -- str:  Show the sign column
+opt.number = true
+opt.numberwidth = 1
+opt.relativenumber = true
+opt.ruler = true
+opt.signcolumn = "yes"
 
--- [[ Copy ]]
-opt.clipboard = 'unnamedplus' -- str:  Use system clipboard
+-- [[ Clipboard ]]
+opt.clipboard = "unnamedplus"
 
 -- [[ Commands ]]
-opt.showcmd = true -- bool: Show command in status line
+opt.showcmd = true
 
--- [[ update time ]]
-opt.updatetime = 300 -- num:  Delay before swap file is saved [[ Copilot ]]
+-- [[ Update time ]]
+opt.updatetime = 300
 
 -- [[ Cursor ]]
-opt.cursorline = true         -- bool: Highlight the current line
-opt.cursorcolumn = false      -- bool: Highlight the current column
-opt.lazyredraw = false        -- bool: Don't redraw while executing macros
-opt.mouse = 'a'               -- str:  Mouse mode
-opt.whichwrap:append "<>[]hl" -- str:  Characters to wrap around
-opt.cmdheight = 0             -- num:  Height of the command bar
+opt.cursorline = true
+opt.cursorcolumn = false
+opt.lazyredraw = false
+opt.mouse = "a"
+opt.whichwrap:append("<>[]hl")
+opt.cmdheight = 0
 
--- [[ Filetypes ]]
-opt.encoding = 'utf8'     -- str:  String encoding to use
-opt.fileencoding = 'utf8' -- str:  File encoding to use
+-- [[ Encoding ]]
+opt.encoding = "utf8"
+opt.fileencoding = "utf8"
 
 -- [[ Theme ]]
-opt.syntax = "ON"        -- str:  Allow syntax highlighting
-opt.termguicolors = true -- bool: If term supports ui color then enable
-opt.showmatch = true     -- bool: Show matching brackets
-opt.laststatus = 2       -- num:  Always show status line
-opt.showmode = false     -- bool: Show current mode
-opt.showtabline = 2      -- num:  Show tabline
+opt.syntax = "ON"
+opt.termguicolors = true
+opt.showmatch = true
+opt.laststatus = 2
+opt.showmode = false
+opt.showtabline = 2
 
 -- [[ Search ]]
-opt.hlsearch = true   -- bool: Highlight search matches
-opt.incsearch = true  -- bool: Use incremental search
-opt.ignorecase = true -- bool: Ignore case in search patterns
-opt.smartcase = true  -- bool: Override ignorecase if search contains capitals
+opt.hlsearch = true
+opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
 
 -- [[ Whitespace ]]
-opt.expandtab = true   -- bool: Use spaces instead of tabs
-opt.shiftwidth = 4     -- num:  Size of an indent
-opt.softtabstop = 4    -- num:  Number of spaces tabs count for in insert mode
-opt.tabstop = 4        -- num:  Number of spaces tabs count for
-opt.sw = 2             -- num:  Size of an indent
-opt.smartindent = true -- bool: Insert indents automatically
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.tabstop = 4
+opt.smartindent = true
 
 -- [[ Splits ]]
-opt.splitright = true -- bool: Place new window to right of current one
-opt.splitbelow = true -- bool: Place new window below the current one
+opt.splitright = true
+opt.splitbelow = true
 
 -- [[ Folding ]]
-opt.foldmethod = 'expr'                     -- str:  Folding method
-opt.foldexpr = 'nvim_treesitter#foldexpr()' -- str:  Folding expression
-opt.foldlevel = 99                          -- num:  Initial fold level
-opt.foldclose = 'all'                       -- str:  Close all folds when opening a new one
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 99
+opt.foldclose = "all"
 
--- [[ Configuración de colores ]]
-cmd('colorscheme tokyonight-night')
-
--- Coq completion settings
--- Set recommended to false
-vim.g.coq_settings = { ["keymap.recommended"] = false }
-
--- [[NVIMTREE]]
--- disable netrw at the very start of your init.lua
+-- [[ Disable netrw (using neo-tree) ]]
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- optionally enable 24-bit colour
-vim.opt.termguicolors = true
-
--- Prettier format on save
-cmd("let g:prettier#autoformat = 0")
-cmd("let g:prettier#autoformat_require_pragma = 0")
