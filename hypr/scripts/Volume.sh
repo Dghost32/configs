@@ -57,6 +57,24 @@ dec_volume() {
     fi
 }
 
+# Fine Increase Volume (1%)
+inc_volume_fine() {
+    if [ "$(pamixer --get-mute)" == "true" ]; then
+        toggle_mute
+    else
+        pamixer -i 1 --allow-boost --set-limit 150 && notify_user
+    fi
+}
+
+# Fine Decrease Volume (1%)
+dec_volume_fine() {
+    if [ "$(pamixer --get-mute)" == "true" ]; then
+        toggle_mute
+    else
+        pamixer -d 1 && notify_user
+    fi
+}
+
 # Toggle Mute
 toggle_mute() {
 	if [ "$(pamixer --get-mute)" == "false" ]; then
@@ -138,6 +156,10 @@ elif [[ "$1" == "--mic-inc" ]]; then
 	inc_mic_volume
 elif [[ "$1" == "--mic-dec" ]]; then
 	dec_mic_volume
+elif [[ "$1" == "--inc1" ]]; then
+	inc_volume_fine
+elif [[ "$1" == "--dec1" ]]; then
+	dec_volume_fine
 else
 	get_volume
 fi
