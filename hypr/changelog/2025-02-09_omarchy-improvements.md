@@ -81,6 +81,26 @@ New opt-out pattern for automatic opacity on unknown/untagged apps:
 2. Each app file opts out with `tag -default-opacity` before setting custom opacity
 3. Bottom of WindowRules.conf applies `opacity 0.97 0.9` to remaining `match:tag default-opacity`
 
+## Post-Implementation Fixes
+
+### SUPER+D Fullscreen Restored
+- `SUPER+D` was changed to `fullscreenstate, 0 2` which only minimized but didn't toggle back
+- Restored to `fullscreen, 1` (fake fullscreen — proper toggle)
+- `fullscreenstate, 0 2` (monocle) moved to `SUPER+ALT+F`
+
+### Special Workspace Margins Reduced
+- `special_scale_factor` changed from `0.8` to `0.95` in `UserSettings.conf`
+- The SUPER+U scratchpad now takes up nearly the full screen instead of leaving large margins
+
+### KeybindViewer Modifier Display Fixed
+- `hyprctl binds -j` has no `modmask_str` field — only a numeric `modmask` bitmask
+- Script now decodes the bitmask (bit 0=SHIFT, 2=CTRL, 3=ALT, 6=SUPER)
+- Shows `SUPER + Space` instead of `nullSpace`
+
+### JetBrains Window Rule Syntax Fixed
+- `bordersize` -> `border_size`, `stayfocused` -> `stay_focused`, `noinitialfocus` -> `no_initial_focus`, `suppressevent` -> `suppress_event`
+- Hyprland 0.53+ uses underscore-separated property names
+
 ## Backups
 
 - `UserConfigs/UserKeybinds.conf.bak` — original keybinds
