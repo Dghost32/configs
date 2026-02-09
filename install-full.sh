@@ -16,6 +16,7 @@ install_extra_packages() {
     local packages=(
         vim
         zed-editor
+        vesktop-bin
     )
 
     info "Installing ${#packages[@]} extra packages via $AUR_HELPER"

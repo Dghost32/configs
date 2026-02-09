@@ -12,7 +12,14 @@
 	defaultBranch = main
 [core]
 	excludesFile = /home/carlos/configs/gitignore/Vim.gitignore
-	pager = less -FX
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = TwoDark
 [alias]
 	track-all-branches = "!git fetch -p && for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done; git branch -a"
 	cob = checkout -b
@@ -28,4 +35,4 @@
 [fetch]
 	prune = true
 [diff]
-	colorMoved = zebra
+	colorMoved = default

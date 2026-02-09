@@ -67,6 +67,8 @@ install_packages() {
         neovim
         # CLI tools
         eza jq fzf bat ripgrep zoxide git git-lfs
+        fd dust duf sd git-delta tldr
+        lazygit yazi
         # Deps
         python nodejs npm
         # Hyprland utilities
