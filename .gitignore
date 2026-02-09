@@ -1,2 +1,8 @@
 .cache/
 .local/
+.configs
+
+# Auto-generated
+hypr/monitors.conf
+hypr/workspaces.conf
+hypr/wallpaper_effects/.wallpaper_modified
