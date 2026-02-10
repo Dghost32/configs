@@ -16,29 +16,28 @@ return {
           "lua_ls", "ts_ls", "pyright", "html", "cssls",
           "jsonls", "bashls", "tailwindcss",
         },
-        automatic_installation = true,
+        automatic_enable = true,
       })
 
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      -- Default capabilities for all servers (cmp integration)
+      vim.lsp.config("*", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
 
-      -- Default handler for all servers
-      require("mason-lspconfig").setup_handlers({
-        function(server)
-          require("lspconfig")[server].setup({ capabilities = capabilities })
-        end,
-        -- Lua special config (for neovim development)
-        ["lua_ls"] = function()
-          require("lspconfig").lua_ls.setup({
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                workspace = { checkThirdParty = false },
-                telemetry = { enable = false },
-                diagnostics = { globals = { "vim" } },
+      -- Lua special config (for neovim development)
+      vim.lsp.config("lua_ls", {
+        settings = {
+          Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+            diagnostics = { globals = { "vim" } },
+            format = {
+              defaultConfig = {
+                indent_size = "2",
               },
             },
-          })
-        end,
+          },
+        },
       })
 
       -- Diagnostics config
