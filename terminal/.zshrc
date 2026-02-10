@@ -26,8 +26,4 @@ source ~/zshrc/init.sh
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Aliases
-alias ls='eza --icons'
-alias ll='eza -la --icons --git'
-alias la='eza -a --icons'
-alias tree='eza --tree --icons'
+alias ls='eza' 
