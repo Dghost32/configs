@@ -18,7 +18,7 @@ zinit light zsh-users/zsh-autosuggestions # [[ CORE ]]
 zinit light Aloxaf/fzf-tab # [[ UI ]]
 zinit light chrissicool/zsh-256color # [[ UI ]]
 zinit ice depth=1; zinit light romkatv/powerlevel10k # [[ UI ]]
-zinit light GeoLMg/apt-zsh-plugin # [[ ALIASES ]]
+# zinit light GeoLMg/apt-zsh-plugin # [[ ALIASES ]] (Debian only, not for Arch)
 zinit light unixorn/fzf-zsh-plugin # [[ ALIASES ]]
 zinit light mdumitru/git-aliases # [[ ALIASES ]]
 # zinit light laggardkernel/zsh-thefuck # [[ TOOLS ]]

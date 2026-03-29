@@ -9,33 +9,26 @@
 {
   "context_servers": {
     "github-activity-summarizer": {
-      "source": "extension",
-      "settings": {}
-    }
+      "settings": {},
+    },
   },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "soft_wrap": "editor_width",
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "show_completions_on_input": true,
   "agent": {
-    "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "model": "gpt-4.1",
     },
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-3-7-sonnet-thinking-latest"
+      "model": "claude-3-7-sonnet-thinking-latest",
     },
-    "version": "2"
   },
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
     "toggle_relative_line_numbers": true,
-    "use_multiline_find": true
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
@@ -43,7 +36,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Catppuccin Mocha",
   },
   "experimental.theme_overrides": {
     "background.appearance": "blurred",
@@ -63,6 +56,6 @@
     "editor.indent_guide": "#b4befe40", // Lavender with less brightness
     "editor.indent_guide_active": "#cba6f770", // Mauve with less brightness
     "editor.line_number": "#89b4fa90", // Blue with less brightness
-    "editor.active_line.background": "#45475a40" // Surface 1 with less brightness
-  }
+    "editor.active_line.background": "#45475a40", // Surface 1 with less brightness
+  },
 }

@@ -21,10 +21,11 @@ config.use_fancy_tab_bar = false
 -- [[ Font — JetBrains Mono with ligatures ]]
 -- => === !== <= <== >= ==> != ++ -- -> => <=>
 config.font = wezterm.font {
-  family = 'JetBrains Mono',
+  family = 'JetBrainsMono Nerd Font',
+  weight = 'Regular',
   harfbuzz_features = { 'calt=2', 'clig=1', 'liga=1' },
 }
-config.font_size = 11.5
+config.font_size = 9
 config.warn_about_missing_glyphs = false
 
 -- [[ Window ]]
@@ -42,7 +43,7 @@ config.inactive_pane_hsb = {
 -- [[ Keys ]]
 config.disable_default_key_bindings = true
 local act = wezterm.action
-config.leader = { key = 's', mods = 'CTRL' }
+config.leader = { key = 's', mods = 'SUPER' }
 
 config.keys = {
   -- Clipboard
